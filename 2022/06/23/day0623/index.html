@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>day0623 | Change Plz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="제목 1ㄴㄴㄴㄴ 소제목 1제목 2ㅁㅇㄹㅇㄹ 소제목 1-1##복습iris데이터,sepal.length,sepal.width 활용해서 종별로 산점도를 그리세요.-제목과 x축, y축을 변경하세요+x축 길이, y축 너비 12library(ggplot2)summary(iris)  1234567891011121314##   Sepal.Length    Sepal.Wi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day0623">
+<meta property="og:url" content="https://seungukkim.github.io/2022/06/23/day0623/index.html">
+<meta property="og:site_name" content="Change Plz">
+<meta property="og:description" content="제목 1ㄴㄴㄴㄴ 소제목 1제목 2ㅁㅇㄹㅇㄹ 소제목 1-1##복습iris데이터,sepal.length,sepal.width 활용해서 종별로 산점도를 그리세요.-제목과 x축, y축을 변경하세요+x축 길이, y축 너비 12library(ggplot2)summary(iris)  1234567891011121314##   Sepal.Length    Sepal.Wi">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://seungukkim.github.io/images/day0623/unnamed-chunk-1-1.png">
+<meta property="og:image" content="https://seungukkim.github.io/images/day0623/unnamed-chunk-2-1.png">
+<meta property="og:image" content="https://seungukkim.github.io/images/day0623/unnamed-chunk-3-1.png">
+<meta property="og:image" content="https://seungukkim.github.io/images/day0623/unnamed-chunk-6-1.png">
+<meta property="article:published_time" content="2022-06-23T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-23T08:33:25.832Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://seungukkim.github.io/images/day0623/unnamed-chunk-1-1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Change Plz" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Change Plz</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://seungukkim.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-day0623" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/23/day0623/" class="article-date">
+  <time class="dt-published" datetime="2022-06-23T00:00:00.000Z" itemprop="datePublished">2022-06-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      day0623
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="제목-1"><a href="#제목-1" class="headerlink" title="제목 1"></a>제목 1</h2><p>ㄴㄴㄴㄴ</p>
+<h3 id="소제목-1"><a href="#소제목-1" class="headerlink" title="소제목 1"></a>소제목 1</h3><h2 id="제목-2"><a href="#제목-2" class="headerlink" title="제목 2"></a>제목 2</h2><p>ㅁㅇㄹㅇㄹ</p>
+<h3 id="소제목-1-1"><a href="#소제목-1-1" class="headerlink" title="소제목 1-1"></a>소제목 1-1</h3><p>##복습<br>iris데이터,sepal.length,sepal.width 활용해서 종별로 산점도를 그리세요.<br>-제목과 x축, y축을 변경하세요<br>+x축 길이, y축 너비</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>ggplot2<span class="punctuation">)</span></span><br><span class="line">summary<span class="punctuation">(</span>iris<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   </span><br><span class="line">##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  </span><br><span class="line">##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  </span><br><span class="line">##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  </span><br><span class="line">##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  </span><br><span class="line">##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  </span><br><span class="line">##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  </span><br><span class="line">##        Species  </span><br><span class="line">##  setosa    :50  </span><br><span class="line">##  versicolor:50  </span><br><span class="line">##  virginica :50  </span><br><span class="line">##                 </span><br><span class="line">##                 </span><br><span class="line">## </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ggplot<span class="punctuation">(</span>iris<span class="punctuation">,</span> aes<span class="punctuation">(</span>x<span class="operator">=</span>Sepal.Length<span class="punctuation">,</span> y<span class="operator">=</span>Sepal.Width<span class="punctuation">,</span> col<span class="operator">=</span>Species<span class="punctuation">)</span><span class="punctuation">)</span><span class="operator">+</span></span><br><span class="line">  geom_point<span class="punctuation">(</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/day0623/unnamed-chunk-1-1.png"><!-- --></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>ggplot2<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">str<span class="punctuation">(</span>iris<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">## &#x27;data.frame&#x27;:	150 obs. of  5 variables:</span><br><span class="line">##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...</span><br><span class="line">##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...</span><br><span class="line">##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...</span><br><span class="line">##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...</span><br><span class="line">##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ggplot<span class="punctuation">(</span>iris<span class="punctuation">,</span>aes<span class="punctuation">(</span>x<span class="operator">=</span>Sepal.Length<span class="punctuation">,</span>y<span class="operator">=</span>Sepal.Width<span class="punctuation">,</span> col<span class="operator">=</span>Species<span class="punctuation">)</span><span class="punctuation">)</span><span class="operator">+</span></span><br><span class="line">  geom_point<span class="punctuation">(</span><span class="punctuation">)</span><span class="operator">+</span></span><br><span class="line">  labs<span class="punctuation">(</span></span><br><span class="line">    title<span class="operator">=</span><span class="string">&quot;제목&quot;</span><span class="punctuation">,</span></span><br><span class="line">    x<span class="operator">=</span><span class="string">&quot;길이&quot;</span><span class="punctuation">,</span></span><br><span class="line">    y<span class="operator">=</span><span class="string">&quot;너비&quot;</span></span><br><span class="line">  <span class="punctuation">)</span><span class="operator">+</span></span><br><span class="line">  scale_color_manual<span class="punctuation">(</span></span><br><span class="line">    labels<span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;setosa&quot;</span><span class="punctuation">,</span> <span class="string">&quot;vericolor&quot;</span><span class="punctuation">,</span><span class="string">&quot;virginica&quot;</span><span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">    values<span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;red&quot;</span><span class="punctuation">,</span><span class="string">&quot;blue&quot;</span><span class="punctuation">,</span><span class="string">&quot;yellow&quot;</span><span class="punctuation">)</span></span><br><span class="line">  <span class="punctuation">)</span><span class="operator">+</span></span><br><span class="line">  theme_classic<span class="punctuation">(</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/day0623/unnamed-chunk-2-1.png"><!-- --></p>
+<p>#평균차이 검정<br>  -가설 검정: 평균의 차이를 검정<br>  -남자의 평균키와 여자의 평균 키는 차이가 있을 것이다. </p>
+<p>  #교차분석(&#x3D;빈도분석)<br>-가설검정: 각 범주별 비도를 활용해서 관계성을 검정<br>#단순 회귀 분석</p>
+<ul>
+<li>y &#x3D;ax + b</li>
+<li>y는 종속변수, x가 정해져야지 정해진다.<br>  -온도 판매량<br>  -가설 검정</li>
+</ul>
+<ul>
+<li>기온(독립변수)이 판매량(종속변수)에 긍정적(부정적)영향을 주고 있을 것이다.</li>
+</ul>
+<p>평균차이 분석, 회귀분석</p>
+<p>###가설<br>-Hypothesis<br>—-&gt; 공부 방법: 선행 연구, 해당분석 방법의 가설 설정 예시 존재<br>-연구: 내가 궁금한 것을 찾는 것<br>-귀무가설: 두 그룹간의 평균 차이가 없다.<br>-대립가설: 두 그룹간의 평균 차이가 있다.</p>
+<p>100명 중 5명 여기서 5명을 유의수준<br>유의수준&#x3D;&gt;0.05이내면 대립가설을 지지해주기로 했다.<br>예외가 있다.&#x3D;&gt; 예외가 있음을 인정하자</p>
+<p>-가설 검정에서 인정하는 유의수준<br>5%, 1%, 0.1% 또는 10% </p>
+<p>-A후보 44%<br>-B후보 42%</p>
+<p>이재명 vs 윤형선<br>-이재명</p>
+<p>t.test<br>-어떻게 데이터를 입력하는지 확인<br>-p.value, 유의수준 0.65이상: 귀무가설, 0.05이내 –&gt; 대립 가설</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mpg1<span class="operator">&lt;-</span>read.csv<span class="punctuation">(</span><span class="string">&quot;../data/mpg1.csv&quot;</span><span class="punctuation">,</span> stringsAsFactors <span class="operator">=</span><span class="built_in">F</span><span class="punctuation">)</span></span><br><span class="line">library<span class="punctuation">(</span>ggplot2<span class="punctuation">)</span></span><br><span class="line">ggplot<span class="punctuation">(</span>mpg1<span class="punctuation">,</span>aes<span class="punctuation">(</span>x<span class="operator">=</span>trans<span class="punctuation">,</span>y<span class="operator">=</span>cty<span class="punctuation">)</span><span class="punctuation">)</span><span class="operator">+</span></span><br><span class="line">  geom_boxplot<span class="punctuation">(</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/day0623/unnamed-chunk-3-1.png"><!-- --><br>-t.test검정<br>+귀무가설: auto와 manual의 cty 평균은 차이가 없다.<br> 대립 가설:auto와 manual의 cty 평균은 차이가 있다.(보다 작으면)</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t.test<span class="punctuation">(</span>data<span class="operator">=</span>mpg1<span class="punctuation">,</span> cty<span class="operator">~</span>trans<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">## 	Welch Two Sample t-test</span><br><span class="line">## </span><br><span class="line">## data:  cty by trans</span><br><span class="line">## t = -4.5375, df = 132.32, p-value = 1.263e-05</span><br><span class="line">## alternative hypothesis: true difference in means between group auto and group manual is not equal to 0</span><br><span class="line">## 95 percent confidence interval:</span><br><span class="line">##  -3.887311 -1.527033</span><br><span class="line">## sample estimates:</span><br><span class="line">##   mean in group auto mean in group manual </span><br><span class="line">##             15.96815             18.67532</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#종속변수~독립변수</span></span><br><span class="line"><span class="comment">#y(반응변수)x(설명변수)</span></span><br></pre></td></tr></table></figure>
+<p>-두 그룹의 평균 차이 검정<br>  +사전 필수 검증<br>  +등분산 검정<br>    +두 그룹간의 분산이 비슷하면 &#x3D;&#x3D;&gt; t.test(모수 검정)<br>    +두 그룹간의 분산이 다르면, –&gt;비모수 검정<br>  +등분산 검정<br>    +귀무가설: 두 그룹간의 분산이 비슷하다.<br>    +대립가설:ㅈㄹ</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var.test<span class="punctuation">(</span>data<span class="operator">=</span>mpg1<span class="punctuation">,</span>cty<span class="operator">~</span>trans<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">## 	F test to compare two variances</span><br><span class="line">## </span><br><span class="line">## data:  cty by trans</span><br><span class="line">## F = 0.73539, num df = 156, denom df = 76, p-value = 0.1101</span><br><span class="line">## alternative hypothesis: true ratio of variances is not equal to 1</span><br><span class="line">## 95 percent confidence interval:</span><br><span class="line">##  0.4912917 1.0719468</span><br><span class="line">## sample estimates:</span><br><span class="line">## ratio of variances </span><br><span class="line">##          0.7353887</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ggplot<span class="punctuation">(</span>mpg1<span class="punctuation">,</span> aes<span class="punctuation">(</span>x<span class="operator">=</span>cty<span class="punctuation">,</span>fill<span class="operator">=</span>trans<span class="punctuation">)</span><span class="punctuation">)</span><span class="operator">+</span></span><br><span class="line">  geom_density<span class="punctuation">(</span>alpha<span class="operator">=</span><span class="number">0.1</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/day0623/unnamed-chunk-6-1.png"><!-- --></p>
+<h3 id="교차분석"><a href="#교차분석" class="headerlink" title="교차분석"></a>교차분석</h3><p>-범주형 변수들이 관계가 있다는 것을 검정<br>-비율에 차이가 있는지 검정<br>-교차분석 검정은 R의chisq.test() 함수로 진행<br>-귀무가설: trans에 따라 drv(4,f,r)의 (비율)차이가 없다.<br>-대립가설: trans에 따라 drv의 차이가 있다.</p>
+<p>#빈도표 &#x2F; 비율</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">##         </span><br><span class="line">##           4  f  r</span><br><span class="line">##   auto   75 65 17</span><br><span class="line">##   manual 28 41  8</span><br></pre></td></tr></table></figure>
+<p>비율</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prop.table<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span>mpg1<span class="operator">$</span>drv<span class="punctuation">)</span><span class="punctuation">,</span><span class="number">1</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">##         </span><br><span class="line">##                  4         f         r</span><br><span class="line">##   auto   0.4777070 0.4140127 0.1082803</span><br><span class="line">##   manual 0.3636364 0.5324675 0.1038961</span><br></pre></td></tr></table></figure>
+<p>-auto 4륜 구동(4)인 47.8%<br>-manual 전륜구동(f) 53.2% 가장 많음<br>-실제로 통계적으로 봤을 때, 차이가 있는지 검정</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chisq.test<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span>mpg1<span class="operator">$</span>drv<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">## 	Pearson&#x27;s Chi-squared test</span><br><span class="line">## </span><br><span class="line">## data:  mpg1$trans and mpg1$drv</span><br><span class="line">## X-squared = 3.1368, df = 2, p-value = 0.2084</span><br></pre></td></tr></table></figure>
+<p>-차이가 없다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://seungukkim.github.io/2022/06/23/day0623/" data-id="cl4qrp26g0000pgv7c6rjagpp" data-title="day0623" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/06/22/day0622/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">day0622</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/06/23/day0623/">day0623</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/22/day0622/">day0622</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/21/day0621/">day0621</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/20/test2/">test2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
