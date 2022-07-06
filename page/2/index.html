@@ -1,118 +1,770 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Change Plz</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Change Plz"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Change Plz"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Change Plz"><meta property="og:url" content="https://seungukkim.github.io/"><meta property="og:site_name" content="Change Plz"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://seungukkim.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://seungukkim.github.io"},"headline":"Change Plz","image":["https://seungukkim.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"Change Plz","logo":{"@type":"ImageObject","url":"https://seungukkim.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Change Plz" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-07-05T08:32:50.000Z" title="2022. 7. 5. 오후 5:32:50">2022-07-05</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-07-05T08:36:08.900Z" title="2022. 7. 5. 오후 5:36:08">2022-07-05</time></span><span class="level-item">16 minutes read (About 2454 words)</span></div></div><div class="content"><h2 id="확률적-경사-하강법"><a href="#확률적-경사-하강법" class="headerlink" title="확률적 경사 하강법"></a>확률적 경사 하강법</h2><ul>
-<li>점진적 학습(step, 보폭</li>
-<li>학습률</li>
-<li>XGBoost, LightGBM, 딥러닝(이미지 분류, 자연어 처리,옵티마이저)</li>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Change Plz</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Change Plz"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Change Plz"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Change Plz"><meta property="og:url" content="https://seungukkim.github.io/"><meta property="og:site_name" content="Change Plz"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://seungukkim.github.io/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://seungukkim.github.io"},"headline":"Change Plz","image":["https://seungukkim.github.io/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"Change Plz","logo":{"@type":"ImageObject","url":"https://seungukkim.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Change Plz" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-07-05T08:33:00.000Z" title="2022. 7. 5. 오후 5:33:00">2022-07-05</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-07-05T08:37:20.215Z" title="2022. 7. 5. 오후 5:37:20">2022-07-05</time></span><span class="level-item">an hour read (About 7953 words)</span></div></div><div class="content"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="랜덤-포레스트"><a href="#랜덤-포레스트" class="headerlink" title="랜덤 포레스트"></a>랜덤 포레스트</h2><ul>
+<li>Decision TRee(나무 1개)<ul>
+<li>여러 개 심음</li>
+<li>샘플링</li>
+<li>Feature Importance</li>
 </ul>
-<p>###신경망 이미지 데이터, 자연어</p>
-<ul>
-<li>자율주행</li>
-<li>자율주행 하루 데이터 1TB -&gt;학습</li>
-<li>한꺼번에 다 모델을 학습 어려움<ul>
-<li>샘플링, 배치, 에포크, 오차(&#x3D;손실 &#x3D; loss)가 가장 작은 지점을 찾아야 한다.</li>
+</li>
+<li>예측해야 할 행의 갯수, 100만개</li>
+<li>컬럼의 갯수 200개 -&gt; 100개<ul>
+<li>나무 100개를 심고 평균을 내자</li>
+<li>나무 1개 당 컬럼을 10개로</li>
+<li>T1 ame : 20 &#x2F; T2 mae : 30 &#x2F; T3 mae 10,…<ul>
+<li>T1 ~ T100 ame : 200개</li>
+<li>featrue importances</li>
+</ul>
+</li>
+<li>샘플링 : 부트스트랩 샘플 (복원 추출)</li>
 </ul>
 </li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>확률적으로 ,확률적 검사 하강법</li>
-</ul>
-<h2 id="손실함수"><a href="#손실함수" class="headerlink" title="손실함수"></a>손실함수</h2><ul>
-<li>로지스틱 손실 함</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">fish = pd.read_csv(<span class="string">&quot;https://bit.ly/fish_csv_data&quot;</span>)</span><br><span class="line">fish.info()</span><br></pre></td></tr></table></figure>
 
-<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 159 entries, 0 to 158
-Data columns (total 6 columns):
- #   Column    Non-Null Count  Dtype  
----  ------    --------------  -----  
- 0   Species   159 non-null    object 
- 1   Weight    159 non-null    float64
- 2   Length    159 non-null    float64
- 3   Diagonal  159 non-null    float64
- 4   Height    159 non-null    float64
- 5   Width     159 non-null    float64
-dtypes: float64(5), object(1)
-memory usage: 7.6+ KB
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split, cross_validate</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line">wine = pd.read_csv(<span class="string">&#x27;https://bit.ly/wine_csv_data&#x27;</span>)</span><br><span class="line">data = wine[[<span class="string">&#x27;alcohol&#x27;</span>,<span class="string">&#x27;sugar&#x27;</span>,<span class="string">&#x27;pH&#x27;</span>]].to_numpy()</span><br><span class="line">target = wine[<span class="string">&#x27;class&#x27;</span>].to_numpy()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 훈련 데이터</span></span><br><span class="line">train_input, test_input, train_target, test_target = train_test_split(</span><br><span class="line">    data, target, test_size = <span class="number">0.2</span>, random_state=<span class="number">42</span></span><br><span class="line">)</span><br><span class="line"><span class="comment"># 모델링</span></span><br><span class="line">rf = RandomForestClassifier(n_jobs =-<span class="number">1</span>, random_state=<span class="number">42</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#모형 평가</span></span><br><span class="line">scores = cross_validate(rf, train_input, train_target, return_train_score= <span class="literal">True</span>, n_jobs=-<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(np.mean(scores[<span class="string">&#x27;train_score&#x27;</span>]),np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment">#특성 중요</span></span><br><span class="line">rf.fit(train_input, train_target)</span><br><span class="line"><span class="built_in">print</span>(rf.feature_importances_)</span><br><span class="line"></span><br><span class="line"><span class="comment">#OOB</span></span><br><span class="line">rf = RandomForestClassifier(oob_score = <span class="literal">True</span>, n_jobs = -<span class="number">1</span>, random_state = <span class="number">42</span>)</span><br><span class="line">rf. fit(train_input, train_target)</span><br><span class="line"><span class="built_in">print</span>(rf.oob_score_)</span><br></pre></td></tr></table></figure>
+
+
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
+
+<pre><code>0.9973541965122431 0.8905151032797809
+[0.23167441 0.50039841 0.26792718]
+0.8934000384837406
 </code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>입력 데이터와 타깃 데이터 분리</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fish_input = fish[[<span class="string">&#x27;Weight&#x27;</span>,<span class="string">&#x27;Length&#x27;</span>,<span class="string">&#x27;Diagonal&#x27;</span>,<span class="string">&#x27;Height&#x27;</span>,<span class="string">&#x27;Width&#x27;</span>]].to_numpy()</span><br><span class="line">fish_target = fish[<span class="string">&#x27;Species&#x27;</span>].to_numpy()</span><br><span class="line">fish_input.shape, fish_target.shape</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>((159, 5), (159,))
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">train_input, test_input, train_target, test_target = train_test_split(</span><br><span class="line">    fish_input, fish_target, random_state=<span class="number">42</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>훈련 세트와 테스트 세트의 특성 표준화<ul>
-<li>무게, 길이, 대각선 길이, 높이, 너비</li>
+<h2 id="그레이디언트-부스팅"><a href="#그레이디언트-부스팅" class="headerlink" title="그레이디언트 부스팅"></a>그레이디언트 부스팅</h2><ul>
+<li>경사하강법의 원리를 이용함</li>
+<li>T1 ~TN 증가하면서 오차를 보정해주며 정확성을 높임</li>
+<li>랜덤포레스트와의 차이점<ul>
+<li>랜덤포레스트는 각 나무간 상호 연관성 x</li>
+<li>부스팅은 각 나무간 상호 연관성 O</li>
 </ul>
 </li>
-<li>표준화 처리 진</li>
+<li>단점<ul>
+<li>속도가 너무 느림</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line">ss= StandardScaler()</span><br><span class="line">ss.fit(train_input)</span><br><span class="line"></span><br><span class="line">train_scaled=ss.transform(train_input)</span><br><span class="line">test_scaled = ss.transform(test_input)</span><br><span class="line"></span><br><span class="line"><span class="comment"># train_scaled[:5]</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="모델링"><a href="#모델링" class="headerlink" title="모델링"></a>모델링</h2><ul>
-<li>확률적 경사 하강법</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> SGDClassifier</span><br><span class="line">sc = SGDClassifier(loss = <span class="string">&#x27;log&#x27;</span>, max_iter = <span class="number">10</span>, random_state=<span class="number">42</span>)</span><br><span class="line"></span><br><span class="line">sc.fit(train_scaled, train_target)</span><br><span class="line"><span class="built_in">print</span>(sc.score(train_scaled, train_target))</span><br><span class="line"><span class="built_in">print</span>(sc.score(test_scaled,test_target))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.773109243697479
-0.775
-
-
-/usr/local/lib/python3.7/dist-packages/sklearn/linear_model/_stochastic_gradient.py:700: ConvergenceWarning: Maximum number of iteration reached before convergence. Consider increasing max_iter to improve the fit.
-  ConvergenceWarning,
-</code></pre>
-<ul>
-<li>partial_fit 메서드 사용하면 추가 학</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sc.partial_fit(train_scaled, train_target)</span><br><span class="line"><span class="built_in">print</span>(sc.score(train_scaled,train_target))</span><br><span class="line"><span class="built_in">print</span>(sc.score(test_scaled,test_target))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.8151260504201681
-0.85
-</code></pre>
-<h2 id="에포크와-과대-x2F-과소-적합"><a href="#에포크와-과대-x2F-과소-적합" class="headerlink" title="에포크와 과대&#x2F;과소 적합"></a>에포크와 과대&#x2F;과소 적합</h2><ul>
-<li>에포크 숫자가 적으면 –&gt; 덜 학습</li>
-<li>early_stopping <ul>
-<li>에포크 숫자를 1000, 손실 10, 9 ,8,….,3</li>
-<li>3에 도달한 시점이 150</li>
+</li>
+<li>대안<ul>
+<li>XGBoost, LightGBM</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">sc = SGDClassifier(loss=<span class="string">&#x27;log&#x27;</span>, random_state =<span class="number">42</span>)</span><br><span class="line">train_score = []</span><br><span class="line">test_score=[]</span><br><span class="line">classes = np.unique(train_target)</span><br></pre></td></tr></table></figure>
-
-<h1 id="300번-에포크-훈련을-반복"><a href="#300번-에포크-훈련을-반복" class="headerlink" title="300번 에포크 훈련을 반복"></a>300번 에포크 훈련을 반복</h1><h1 id="훈련할-때마다-train-score-test-score를-추가한다"><a href="#훈련할-때마다-train-score-test-score를-추가한다" class="headerlink" title="훈련할 때마다, train_score, test_score를 추가한다."></a>훈련할 때마다, train_score, test_score를 추가한다.</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">300</span>):</span><br><span class="line">  sc.partial_fit(train_scaled,train_target,classes=classes)</span><br><span class="line">  train_score.append(sc.score(train_scaled, train_target))</span><br><span class="line">  test_score.append(sc.score(test_scaled,test_target))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> GradientBoostingClassifier</span><br><span class="line">gb = GradientBoostingClassifier(n_estimators = <span class="number">500</span>,learning_rate =<span class="number">0.2</span>,random_state =<span class="number">42</span>)</span><br><span class="line">scores = cross_validate(gb, train_input, train_target, return_train_score = <span class="literal">True</span>, n_jobs=-<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(np.mean(scores[<span class="string">&#x27;train_score&#x27;</span>]), np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>]))</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 시각화</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.plot(train_score)</span><br><span class="line">plt.plot(test_score)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">plt.show()</span><br><span class="line"><span class="comment"># 앞부분에 테스트 성능이 더 좋은것은 과소적합</span></span><br><span class="line"><span class="comment"># 100 이후부터는 과대적합?</span></span><br></pre></td></tr></table></figure>
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
 
 
-<p><img src="/images/day0704/output_20_0.png" alt="png"></p>
-<h2 id="XGBoost-LightGBM-코드"><a href="#XGBoost-LightGBM-코드" class="headerlink" title="XGBoost, LightGBM 코드"></a>XGBoost, LightGBM 코드</h2><ul>
-<li>train -loss, train-accuracy, test-loss, test-accuracy</li>
+
+<pre><code>0.9464595437171814 0.8780082549788999
+</code></pre>
+<ul>
+<li>특성 중요도</li>
 </ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gb.fit(train_input, train_target)</span><br><span class="line"><span class="built_in">print</span>(gb.feature_importances_)</span><br></pre></td></tr></table></figure>
+
+
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
+
+<pre><code>[0.15872278 0.68010884 0.16116839]
+</code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
+<h2 id="주성분-분석"><a href="#주성분-분석" class="headerlink" title="주성분 분석"></a>주성분 분석</h2><ul>
+<li><p>이론적으로는 어려움</p>
+</li>
+<li><p>좌표계 공간 개념</p>
+</li>
+<li><p>직교 + 회전</p>
+</li>
+<li><p>공분산 등(통계 관련 내용)</p>
+</li>
+<li><p>Feature Engineering 기법</p>
+</li>
+<li><p>StandardScaler()</p>
+</li>
+<li><p>컬럼의 개수가 너무 많다.</p>
+</li>
+<li><p>차원 축소</p>
+<ul>
+<li>특성이 많으면 훈련 데이터에 쉽게 과대적합된다.</li>
+<li>특성을 줄여서 학습 모델의 성능을 향상시킨다. </li>
+<li>대표적인 방법론 중 하나가 PCA, EFA</li>
+</ul>
+</li>
+<li><p>PCA vs EFA</p>
+<ul>
+<li>EFA(탐색적 요인 분석), Factor Analsis</li>
+<li>예) 국어 ,수학, 과학, 영어</li>
+<li>예 ) 국어 40, 수학 100, 과학 100, 영어 30 &#x2F; 귀 학생은 언어 영역은 수준이 낮은편이나 수리영역은 매우 수준이 높습니다.</li>
+<li>예? 번주형 &amp; 수치 데이터셋</li>
+<li>PCA(주성분 분석)<ul>
+<li>장비1, 장비2, 장비 3, …</li>
+<li>pc1, pc2 ,pc3 …</li>
+<li>원래 가지고 있던 정보를 알 수 없음(정보 손실)</li>
+<li>범주형 데이터셋에는 사용 안됨</li>
+<li>무조건 수치형 데이터에서만 사용<br>실행 )</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>p.320</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 데이터 내려받기 -O(대문자 O이다)</span></span><br><span class="line">!wget https://bit.ly/fruits_300_data -O fruits_300.npy</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">wine=pd.read_csv(<span class="string">&#x27;https://bit.ly/wine_csv_data&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wine.head()</span><br></pre></td></tr></table></figure>
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
+
+<pre><code>--2022-07-05 07:50:20--  https://bit.ly/fruits_300_data
+Resolving bit.ly (bit.ly)... 67.199.248.10, 67.199.248.11
+Connecting to bit.ly (bit.ly)|67.199.248.10|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy [following]
+--2022-07-05 07:50:20--  https://github.com/rickiepark/hg-mldl/raw/master/fruits_300.npy
+Resolving github.com (github.com)... 140.82.113.4
+Connecting to github.com (github.com)|140.82.113.4|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/rickiepark/hg-mldl/master/fruits_300.npy [following]
+--2022-07-05 07:50:21--  https://raw.githubusercontent.com/rickiepark/hg-mldl/master/fruits_300.npy
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.110.133, 185.199.108.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3000128 (2.9M) [application/octet-stream]
+Saving to: ‘fruits_300.npy’
+
+fruits_300.npy      100%[===================&gt;]   2.86M  --.-KB/s    in 0.02s   
+
+2022-07-05 07:50:21 (172 MB/s) - ‘fruits_300.npy’ saved [3000128/3000128]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">fruits = np.load(<span class="string">&#x27;/content/fruits_300.npy&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(fruits.shape)</span><br><span class="line">fruits_2d = fruits.reshape(-<span class="number">1</span>,<span class="number">100</span>*<span class="number">100</span>) <span class="comment"># 300개의 행, 10000개의 열</span></span><br><span class="line">fruits_2d.shape</span><br></pre></td></tr></table></figure>
+
+
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
+
+<pre><code>(300, 100, 100)
 
 
 
 
 
-  <div id="df-3bf02ac1-ddc8-4efa-a92e-c38f41acaaf5">
+(300, 10000)
+</code></pre>
+<ul>
+<li>PCA</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA</span><br><span class="line">pca = PCA(n_components =<span class="number">50</span>) <span class="comment">#PCA 클래스의 객체를 만들 때 n_components 매개변수에 주성분 개수를 지정한다.</span></span><br><span class="line">pca.fit(fruits_2d)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
+
+
+
+
+<pre><code>PCA(copy=True, iterated_power=&#39;auto&#39;, n_components=50, random_state=None,
+    svd_solver=&#39;auto&#39;, tol=0.0, whiten=False)
+</code></pre>
+<ul>
+<li>n_components를 50으로 지정해서 pca.components_ 배열의 첫번째 차원이 50으로 나타난다. 즉 50개의 주성분을 찾은 것이다. 두 번째 차원은 항상 원본 데이터의 특성 개수와 같은 10000이다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(pca.components_.shape)</span><br></pre></td></tr></table></figure>
+
+
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
+
+<pre><code>(50, 10000)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_fruits</span>(<span class="params">arr, ratio=<span class="number">1</span></span>):</span><br><span class="line">    n = <span class="built_in">len</span>(arr)    <span class="comment"># n은 샘플 개수입니다</span></span><br><span class="line">    <span class="comment"># 한 줄에 10개씩 이미지를 그립니다. 샘플 개수를 10으로 나누어 전체 행 개수를 계산합니다. </span></span><br><span class="line">    rows = <span class="built_in">int</span>(np.ceil(n/<span class="number">10</span>))</span><br><span class="line">    <span class="comment"># 행이 1개 이면 열 개수는 샘플 개수입니다. 그렇지 않으면 10개입니다.</span></span><br><span class="line">    cols = n <span class="keyword">if</span> rows &lt; <span class="number">2</span> <span class="keyword">else</span> <span class="number">10</span></span><br><span class="line">    fig, axs = plt.subplots(rows, cols, </span><br><span class="line">                            figsize=(cols*ratio, rows*ratio), squeeze=<span class="literal">False</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(rows):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(cols):</span><br><span class="line">            <span class="keyword">if</span> i*<span class="number">10</span> + j &lt; n:    <span class="comment"># n 개까지만 그립니다.</span></span><br><span class="line">                axs[i, j].imshow(arr[i*<span class="number">10</span> + j], cmap=<span class="string">&#x27;gray_r&#x27;</span>)</span><br><span class="line">            axs[i, j].axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+
+
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">draw_fruits(pca.components_.reshape(-<span class="number">1</span>,<span class="number">100</span>,<span class="number">100</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
+
+
+<p><img src="/images/day0705/output_18_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 머신러닝에서 컬럼의 개수를 10000개에서 50개로 줄임</span></span><br><span class="line">fruits_pca = pca.transform(fruits_2d)</span><br><span class="line"><span class="built_in">print</span>(fruits_pca.shape)</span><br></pre></td></tr></table></figure>
+
+
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
+
+<pre><code>(300, 50)
+</code></pre>
+<ul>
+<li>훈련데이터, 테스트 데이터 분리</li>
+</ul>
+<h2 id="설명된-분산"><a href="#설명된-분산" class="headerlink" title="설명된 분산"></a>설명된 분산</h2><ul>
+<li>주성분이 원본 데이터의 분산을 얼마나 잘 나타내는지 기록한 값</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 주성분이 원본 데이터의 분산을 얼마나 잘 나타내는지 기록한 값을 설명된 분산이라고 한다.</span></span><br><span class="line"><span class="comment"># PCA 클래스의 explained_variance_ratio_에 각 주성분의 설명된 분산 비율이 기록되어 있다. 이 분산 비율을 모두 더하면 50개의 주성분으로 표현하고 있는 총 분산 비율을 얻을 수 있다.</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(np.<span class="built_in">sum</span>(pca.explained_variance_ratio_))</span><br></pre></td></tr></table></figure>
+
+
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
+
+<pre><code>0.9215214358477614
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">plt.plot(pca.explained_variance_ratio_)</span><br><span class="line">plt.show()</span><br><span class="line"><span class="comment"># 그래프를 보면 처음 10개의 주성분이 대부분의 분산을 표현하고 있다. 그 다음부터의 각 주성분이 설명하는 분산은 비교적으로 작다.</span></span><br></pre></td></tr></table></figure>
+
+
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
+
+
+<p><img src="/images/day0705/output_23_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.<span class="built_in">sum</span>(pca.explained_variance_ratio_[:<span class="number">50</span>]))</span><br></pre></td></tr></table></figure>
+
+
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
+
+<pre><code>0.9215214358477614
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">!pip uninstall sklearn -y</span><br><span class="line">!pip install --upgrade sklearn</span><br><span class="line">!pip install scikit-learn==<span class="number">0.23</span><span class="number">.2</span> --user</span><br><span class="line">!pip install pycaret</span><br><span class="line">!pip install markupsafe==<span class="number">2.0</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>Found existing installation: sklearn 0.0
+Uninstalling sklearn-0.0:
+  Successfully uninstalled sklearn-0.0
+Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Collecting sklearn
+  Downloading sklearn-0.0.tar.gz (1.1 kB)
+Requirement already satisfied: scikit-learn in /usr/local/lib/python3.7/dist-packages (from sklearn) (1.0.2)
+Requirement already satisfied: numpy&gt;=1.14.6 in /usr/local/lib/python3.7/dist-packages (from scikit-learn-&gt;sklearn) (1.21.6)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /usr/local/lib/python3.7/dist-packages (from scikit-learn-&gt;sklearn) (3.1.0)
+Requirement already satisfied: scipy&gt;=1.1.0 in /usr/local/lib/python3.7/dist-packages (from scikit-learn-&gt;sklearn) (1.4.1)
+Requirement already satisfied: joblib&gt;=0.11 in /usr/local/lib/python3.7/dist-packages (from scikit-learn-&gt;sklearn) (1.1.0)
+Building wheels for collected packages: sklearn
+  Building wheel for sklearn (setup.py) ... [?25l[?25hdone
+  Created wheel for sklearn: filename=sklearn-0.0-py2.py3-none-any.whl size=1310 sha256=5566fc096d6ec95daf803ef331a5510fa75a651d8e4d1d9f06b99dfd8c4e2161
+  Stored in directory: /root/.cache/pip/wheels/46/ef/c3/157e41f5ee1372d1be90b09f74f82b10e391eaacca8f22d33e
+Successfully built sklearn
+Installing collected packages: sklearn
+Successfully installed sklearn-0.0
+Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Collecting scikit-learn==0.23.2
+  Downloading scikit_learn-0.23.2-cp37-cp37m-manylinux1_x86_64.whl (6.8 MB)
+[K     |████████████████████████████████| 6.8 MB 27.6 MB/s 
+[?25hRequirement already satisfied: threadpoolctl&gt;=2.0.0 in /usr/local/lib/python3.7/dist-packages (from scikit-learn==0.23.2) (3.1.0)
+Requirement already satisfied: numpy&gt;=1.13.3 in /usr/local/lib/python3.7/dist-packages (from scikit-learn==0.23.2) (1.21.6)
+Requirement already satisfied: joblib&gt;=0.11 in /usr/local/lib/python3.7/dist-packages (from scikit-learn==0.23.2) (1.1.0)
+Requirement already satisfied: scipy&gt;=0.19.1 in /usr/local/lib/python3.7/dist-packages (from scikit-learn==0.23.2) (1.4.1)
+Installing collected packages: scikit-learn
+[31mERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+yellowbrick 1.4 requires scikit-learn&gt;=1.0.0, but you have scikit-learn 0.23.2 which is incompatible.
+imbalanced-learn 0.8.1 requires scikit-learn&gt;=0.24, but you have scikit-learn 0.23.2 which is incompatible.[0m
+Successfully installed scikit-learn-0.23.2
+
+
+
+
+Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Collecting pycaret
+  Downloading pycaret-2.3.10-py3-none-any.whl (320 kB)
+[K     |████████████████████████████████| 320 kB 19.6 MB/s 
+[?25hRequirement already satisfied: pandas in /usr/local/lib/python3.7/dist-packages (from pycaret) (1.3.5)
+Collecting mlflow
+  Downloading mlflow-1.27.0-py3-none-any.whl (17.9 MB)
+[K     |████████████████████████████████| 17.9 MB 54.3 MB/s 
+[?25hRequirement already satisfied: matplotlib in /usr/local/lib/python3.7/dist-packages (from pycaret) (3.2.2)
+Collecting pandas-profiling&gt;=2.8.0
+  Downloading pandas_profiling-3.2.0-py2.py3-none-any.whl (262 kB)
+[K     |████████████████████████████████| 262 kB 42.6 MB/s 
+[?25hRequirement already satisfied: pyyaml&lt;6.0.0 in /usr/local/lib/python3.7/dist-packages (from pycaret) (3.13)
+Collecting Boruta
+  Downloading Boruta-0.3-py3-none-any.whl (56 kB)
+[K     |████████████████████████████████| 56 kB 4.4 MB/s 
+[?25hRequirement already satisfied: IPython in /usr/local/lib/python3.7/dist-packages (from pycaret) (5.5.0)
+Collecting lightgbm&gt;=2.3.1
+  Downloading lightgbm-3.3.2-py3-none-manylinux1_x86_64.whl (2.0 MB)
+[K     |████████████████████████████████| 2.0 MB 44.5 MB/s 
+[?25hRequirement already satisfied: scikit-learn==0.23.2 in /root/.local/lib/python3.7/site-packages (from pycaret) (0.23.2)
+Requirement already satisfied: numba&lt;0.55 in /usr/local/lib/python3.7/dist-packages (from pycaret) (0.51.2)
+Requirement already satisfied: nltk in /usr/local/lib/python3.7/dist-packages (from pycaret) (3.7)
+Requirement already satisfied: yellowbrick&gt;=1.0.1 in /usr/local/lib/python3.7/dist-packages (from pycaret) (1.4)
+Collecting pyod
+  Downloading pyod-1.0.2.tar.gz (122 kB)
+[K     |████████████████████████████████| 122 kB 68.6 MB/s 
+[?25hRequirement already satisfied: wordcloud in /usr/local/lib/python3.7/dist-packages (from pycaret) (1.5.0)
+Requirement already satisfied: joblib in /usr/local/lib/python3.7/dist-packages (from pycaret) (1.1.0)
+Collecting spacy&lt;2.4.0
+  Downloading spacy-2.3.7-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.4 MB)
+[K     |████████████████████████████████| 10.4 MB 41.6 MB/s 
+[?25hRequirement already satisfied: seaborn in /usr/local/lib/python3.7/dist-packages (from pycaret) (0.11.2)
+Requirement already satisfied: plotly&gt;=4.4.1 in /usr/local/lib/python3.7/dist-packages (from pycaret) (5.5.0)
+Requirement already satisfied: cufflinks&gt;=0.17.0 in /usr/local/lib/python3.7/dist-packages (from pycaret) (0.17.3)
+Collecting imbalanced-learn==0.7.0
+  Downloading imbalanced_learn-0.7.0-py3-none-any.whl (167 kB)
+[K     |████████████████████████████████| 167 kB 57.6 MB/s 
+[?25hCollecting mlxtend&gt;=0.17.0
+  Downloading mlxtend-0.20.0-py2.py3-none-any.whl (1.3 MB)
+[K     |████████████████████████████████| 1.3 MB 53.8 MB/s 
+[?25hCollecting kmodes&gt;=0.10.1
+  Downloading kmodes-0.12.1-py2.py3-none-any.whl (20 kB)
+Requirement already satisfied: gensim&lt;4.0.0 in /usr/local/lib/python3.7/dist-packages (from pycaret) (3.6.0)
+Collecting pyLDAvis
+  Downloading pyLDAvis-3.3.1.tar.gz (1.7 MB)
+[K     |████████████████████████████████| 1.7 MB 50.2 MB/s 
+[?25h  Installing build dependencies ... [?25l[?25hdone
+  Getting requirements to build wheel ... [?25l[?25hdone
+  Installing backend dependencies ... [?25l[?25hdone
+    Preparing wheel metadata ... [?25l[?25hdone
+Collecting umap-learn
+  Downloading umap-learn-0.5.3.tar.gz (88 kB)
+[K     |████████████████████████████████| 88 kB 6.8 MB/s 
+[?25hCollecting scikit-plot
+  Downloading scikit_plot-0.3.7-py3-none-any.whl (33 kB)
+Requirement already satisfied: ipywidgets in /usr/local/lib/python3.7/dist-packages (from pycaret) (7.7.0)
+Requirement already satisfied: textblob in /usr/local/lib/python3.7/dist-packages (from pycaret) (0.15.3)
+Requirement already satisfied: scipy&lt;=1.5.4 in /usr/local/lib/python3.7/dist-packages (from pycaret) (1.4.1)
+Requirement already satisfied: numpy&gt;=1.13.3 in /usr/local/lib/python3.7/dist-packages (from imbalanced-learn==0.7.0-&gt;pycaret) (1.21.6)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /usr/local/lib/python3.7/dist-packages (from scikit-learn==0.23.2-&gt;pycaret) (3.1.0)
+Requirement already satisfied: six&gt;=1.9.0 in /usr/local/lib/python3.7/dist-packages (from cufflinks&gt;=0.17.0-&gt;pycaret) (1.15.0)
+Requirement already satisfied: colorlover&gt;=0.2.1 in /usr/local/lib/python3.7/dist-packages (from cufflinks&gt;=0.17.0-&gt;pycaret) (0.3.0)
+Requirement already satisfied: setuptools&gt;=34.4.1 in /usr/local/lib/python3.7/dist-packages (from cufflinks&gt;=0.17.0-&gt;pycaret) (57.4.0)
+Requirement already satisfied: smart-open&gt;=1.2.1 in /usr/local/lib/python3.7/dist-packages (from gensim&lt;4.0.0-&gt;pycaret) (5.2.1)
+Requirement already satisfied: decorator in /usr/local/lib/python3.7/dist-packages (from IPython-&gt;pycaret) (4.4.2)
+Requirement already satisfied: pexpect in /usr/local/lib/python3.7/dist-packages (from IPython-&gt;pycaret) (4.8.0)
+Requirement already satisfied: traitlets&gt;=4.2 in /usr/local/lib/python3.7/dist-packages (from IPython-&gt;pycaret) (5.1.1)
+Requirement already satisfied: pygments in /usr/local/lib/python3.7/dist-packages (from IPython-&gt;pycaret) (2.6.1)
+Requirement already satisfied: prompt-toolkit&lt;2.0.0,&gt;=1.0.4 in /usr/local/lib/python3.7/dist-packages (from IPython-&gt;pycaret) (1.0.18)
+Requirement already satisfied: pickleshare in /usr/local/lib/python3.7/dist-packages (from IPython-&gt;pycaret) (0.7.5)
+Requirement already satisfied: simplegeneric&gt;0.8 in /usr/local/lib/python3.7/dist-packages (from IPython-&gt;pycaret) (0.8.1)
+Requirement already satisfied: nbformat&gt;=4.2.0 in /usr/local/lib/python3.7/dist-packages (from ipywidgets-&gt;pycaret) (5.4.0)
+Requirement already satisfied: widgetsnbextension~=3.6.0 in /usr/local/lib/python3.7/dist-packages (from ipywidgets-&gt;pycaret) (3.6.0)
+Requirement already satisfied: jupyterlab-widgets&gt;=1.0.0 in /usr/local/lib/python3.7/dist-packages (from ipywidgets-&gt;pycaret) (1.1.0)
+Requirement already satisfied: ipykernel&gt;=4.5.1 in /usr/local/lib/python3.7/dist-packages (from ipywidgets-&gt;pycaret) (4.10.1)
+Requirement already satisfied: ipython-genutils~=0.2.0 in /usr/local/lib/python3.7/dist-packages (from ipywidgets-&gt;pycaret) (0.2.0)
+Requirement already satisfied: tornado&gt;=4.0 in /usr/local/lib/python3.7/dist-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets-&gt;pycaret) (5.1.1)
+Requirement already satisfied: jupyter-client in /usr/local/lib/python3.7/dist-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets-&gt;pycaret) (5.3.5)
+Requirement already satisfied: wheel in /usr/local/lib/python3.7/dist-packages (from lightgbm&gt;=2.3.1-&gt;pycaret) (0.37.1)
+Collecting mlxtend&gt;=0.17.0
+  Downloading mlxtend-0.19.0-py2.py3-none-any.whl (1.3 MB)
+[K     |████████████████████████████████| 1.3 MB 63.9 MB/s 
+[?25hRequirement already satisfied: python-dateutil&gt;=2.1 in /usr/local/lib/python3.7/dist-packages (from matplotlib-&gt;pycaret) (2.8.2)
+Requirement already satisfied: cycler&gt;=0.10 in /usr/local/lib/python3.7/dist-packages (from matplotlib-&gt;pycaret) (0.11.0)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.1 in /usr/local/lib/python3.7/dist-packages (from matplotlib-&gt;pycaret) (3.0.9)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /usr/local/lib/python3.7/dist-packages (from matplotlib-&gt;pycaret) (1.4.3)
+Requirement already satisfied: typing-extensions in /usr/local/lib/python3.7/dist-packages (from kiwisolver&gt;=1.0.1-&gt;matplotlib-&gt;pycaret) (4.1.1)
+Requirement already satisfied: jupyter-core in /usr/local/lib/python3.7/dist-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;pycaret) (4.10.0)
+Requirement already satisfied: fastjsonschema in /usr/local/lib/python3.7/dist-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;pycaret) (2.15.3)
+Requirement already satisfied: jsonschema&gt;=2.6 in /usr/local/lib/python3.7/dist-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;pycaret) (4.3.3)
+Requirement already satisfied: importlib-resources&gt;=1.4.0 in /usr/local/lib/python3.7/dist-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;pycaret) (5.7.1)
+Requirement already satisfied: attrs&gt;=17.4.0 in /usr/local/lib/python3.7/dist-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;pycaret) (21.4.0)
+Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0 in /usr/local/lib/python3.7/dist-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;pycaret) (0.18.1)
+Requirement already satisfied: importlib-metadata in /usr/local/lib/python3.7/dist-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;pycaret) (4.11.4)
+Requirement already satisfied: zipp&gt;=3.1.0 in /usr/local/lib/python3.7/dist-packages (from importlib-resources&gt;=1.4.0-&gt;jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;pycaret) (3.8.0)
+Requirement already satisfied: llvmlite&lt;0.35,&gt;=0.34.0.dev0 in /usr/local/lib/python3.7/dist-packages (from numba&lt;0.55-&gt;pycaret) (0.34.0)
+Requirement already satisfied: pytz&gt;=2017.3 in /usr/local/lib/python3.7/dist-packages (from pandas-&gt;pycaret) (2022.1)
+Collecting markupsafe~=2.1.1
+  Downloading MarkupSafe-2.1.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+Requirement already satisfied: pydantic&gt;=1.8.1 in /usr/local/lib/python3.7/dist-packages (from pandas-profiling&gt;=2.8.0-&gt;pycaret) (1.8.2)
+Requirement already satisfied: missingno&gt;=0.4.2 in /usr/local/lib/python3.7/dist-packages (from pandas-profiling&gt;=2.8.0-&gt;pycaret) (0.5.1)
+Requirement already satisfied: tqdm&gt;=4.48.2 in /usr/local/lib/python3.7/dist-packages (from pandas-profiling&gt;=2.8.0-&gt;pycaret) (4.64.0)
+Collecting htmlmin&gt;=0.1.12
+  Downloading htmlmin-0.1.12.tar.gz (19 kB)
+Collecting multimethod&gt;=1.4
+  Downloading multimethod-1.8-py3-none-any.whl (9.8 kB)
+Collecting visions[type_image_path]==0.7.4
+  Downloading visions-0.7.4-py3-none-any.whl (102 kB)
+[K     |████████████████████████████████| 102 kB 12.2 MB/s 
+[?25hRequirement already satisfied: jinja2&gt;=2.11.1 in /usr/local/lib/python3.7/dist-packages (from pandas-profiling&gt;=2.8.0-&gt;pycaret) (2.11.3)
+Collecting requests&gt;=2.24.0
+  Downloading requests-2.28.1-py3-none-any.whl (62 kB)
+[K     |████████████████████████████████| 62 kB 1.6 MB/s 
+[?25hCollecting phik&gt;=0.11.1
+  Downloading phik-0.12.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (690 kB)
+[K     |████████████████████████████████| 690 kB 61.5 MB/s 
+[?25hCollecting tangled-up-in-unicode==0.2.0
+  Downloading tangled_up_in_unicode-0.2.0-py3-none-any.whl (4.7 MB)
+[K     |████████████████████████████████| 4.7 MB 52.9 MB/s 
+[?25hCollecting pyyaml&lt;6.0.0
+  Downloading PyYAML-5.4.1-cp37-cp37m-manylinux1_x86_64.whl (636 kB)
+[K     |████████████████████████████████| 636 kB 58.4 MB/s 
+[?25hRequirement already satisfied: networkx&gt;=2.4 in /usr/local/lib/python3.7/dist-packages (from visions[type_image_path]==0.7.4-&gt;pandas-profiling&gt;=2.8.0-&gt;pycaret) (2.6.3)
+Requirement already satisfied: Pillow in /usr/local/lib/python3.7/dist-packages (from visions[type_image_path]==0.7.4-&gt;pandas-profiling&gt;=2.8.0-&gt;pycaret) (7.1.2)
+Collecting imagehash
+  Downloading ImageHash-4.2.1.tar.gz (812 kB)
+[K     |████████████████████████████████| 812 kB 44.9 MB/s 
+[?25hCollecting scipy&lt;=1.5.4
+  Downloading scipy-1.5.4-cp37-cp37m-manylinux1_x86_64.whl (25.9 MB)
+[K     |████████████████████████████████| 25.9 MB 1.3 MB/s 
+[?25hRequirement already satisfied: tenacity&gt;=6.2.0 in /usr/local/lib/python3.7/dist-packages (from plotly&gt;=4.4.1-&gt;pycaret) (8.0.1)
+Requirement already satisfied: wcwidth in /usr/local/lib/python3.7/dist-packages (from prompt-toolkit&lt;2.0.0,&gt;=1.0.4-&gt;IPython-&gt;pycaret) (0.2.5)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.7/dist-packages (from requests&gt;=2.24.0-&gt;pandas-profiling&gt;=2.8.0-&gt;pycaret) (1.24.3)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.7/dist-packages (from requests&gt;=2.24.0-&gt;pandas-profiling&gt;=2.8.0-&gt;pycaret) (2022.6.15)
+Requirement already satisfied: charset-normalizer&lt;3,&gt;=2 in /usr/local/lib/python3.7/dist-packages (from requests&gt;=2.24.0-&gt;pandas-profiling&gt;=2.8.0-&gt;pycaret) (2.0.12)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.7/dist-packages (from requests&gt;=2.24.0-&gt;pandas-profiling&gt;=2.8.0-&gt;pycaret) (2.10)
+Requirement already satisfied: blis&lt;0.8.0,&gt;=0.4.0 in /usr/local/lib/python3.7/dist-packages (from spacy&lt;2.4.0-&gt;pycaret) (0.7.7)
+Requirement already satisfied: wasabi&lt;1.1.0,&gt;=0.4.0 in /usr/local/lib/python3.7/dist-packages (from spacy&lt;2.4.0-&gt;pycaret) (0.9.1)
+Collecting catalogue&lt;1.1.0,&gt;=0.0.7
+  Downloading catalogue-1.0.0-py2.py3-none-any.whl (7.7 kB)
+Requirement already satisfied: murmurhash&lt;1.1.0,&gt;=0.28.0 in /usr/local/lib/python3.7/dist-packages (from spacy&lt;2.4.0-&gt;pycaret) (1.0.7)
+Collecting srsly&lt;1.1.0,&gt;=1.0.2
+  Downloading srsly-1.0.5-cp37-cp37m-manylinux2014_x86_64.whl (184 kB)
+[K     |████████████████████████████████| 184 kB 50.9 MB/s 
+[?25hRequirement already satisfied: cymem&lt;2.1.0,&gt;=2.0.2 in /usr/local/lib/python3.7/dist-packages (from spacy&lt;2.4.0-&gt;pycaret) (2.0.6)
+Collecting thinc&lt;7.5.0,&gt;=7.4.1
+  Downloading thinc-7.4.5-cp37-cp37m-manylinux2014_x86_64.whl (1.0 MB)
+[K     |████████████████████████████████| 1.0 MB 55.5 MB/s 
+[?25hCollecting plac&lt;1.2.0,&gt;=0.9.6
+  Downloading plac-1.1.3-py2.py3-none-any.whl (20 kB)
+Requirement already satisfied: preshed&lt;3.1.0,&gt;=3.0.2 in /usr/local/lib/python3.7/dist-packages (from spacy&lt;2.4.0-&gt;pycaret) (3.0.6)
+Requirement already satisfied: notebook&gt;=4.4.1 in /usr/local/lib/python3.7/dist-packages (from widgetsnbextension~=3.6.0-&gt;ipywidgets-&gt;pycaret) (5.3.1)
+Requirement already satisfied: terminado&gt;=0.8.1 in /usr/local/lib/python3.7/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets-&gt;pycaret) (0.13.3)
+Requirement already satisfied: Send2Trash in /usr/local/lib/python3.7/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets-&gt;pycaret) (1.8.0)
+Requirement already satisfied: nbconvert in /usr/local/lib/python3.7/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets-&gt;pycaret) (5.6.1)
+Requirement already satisfied: pyzmq&gt;=13 in /usr/local/lib/python3.7/dist-packages (from jupyter-client-&gt;ipykernel&gt;=4.5.1-&gt;ipywidgets-&gt;pycaret) (23.1.0)
+Requirement already satisfied: ptyprocess in /usr/local/lib/python3.7/dist-packages (from terminado&gt;=0.8.1-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets-&gt;pycaret) (0.7.0)
+Collecting yellowbrick&gt;=1.0.1
+  Downloading yellowbrick-1.3.post1-py3-none-any.whl (271 kB)
+[K     |████████████████████████████████| 271 kB 56.5 MB/s 
+[?25hCollecting numpy&gt;=1.13.3
+  Downloading numpy-1.19.5-cp37-cp37m-manylinux2010_x86_64.whl (14.8 MB)
+[K     |████████████████████████████████| 14.8 MB 71.4 MB/s 
+[?25hRequirement already satisfied: PyWavelets in /usr/local/lib/python3.7/dist-packages (from imagehash-&gt;visions[type_image_path]==0.7.4-&gt;pandas-profiling&gt;=2.8.0-&gt;pycaret) (1.3.0)
+Collecting docker&gt;=4.0.0
+  Downloading docker-5.0.3-py2.py3-none-any.whl (146 kB)
+[K     |████████████████████████████████| 146 kB 42.0 MB/s 
+[?25hCollecting alembic
+  Downloading alembic-1.8.0-py3-none-any.whl (209 kB)
+[K     |████████████████████████████████| 209 kB 71.6 MB/s 
+[?25hCollecting gunicorn
+  Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
+[K     |████████████████████████████████| 79 kB 342 kB/s 
+[?25hRequirement already satisfied: cloudpickle in /usr/local/lib/python3.7/dist-packages (from mlflow-&gt;pycaret) (1.3.0)
+Requirement already satisfied: protobuf&gt;=3.12.0 in /usr/local/lib/python3.7/dist-packages (from mlflow-&gt;pycaret) (3.17.3)
+Requirement already satisfied: entrypoints in /usr/local/lib/python3.7/dist-packages (from mlflow-&gt;pycaret) (0.4)
+Collecting gitpython&gt;=2.1.0
+  Downloading GitPython-3.1.27-py3-none-any.whl (181 kB)
+[K     |████████████████████████████████| 181 kB 53.3 MB/s 
+[?25hCollecting databricks-cli&gt;=0.8.7
+  Downloading databricks-cli-0.17.0.tar.gz (81 kB)
+[K     |████████████████████████████████| 81 kB 10.9 MB/s 
+[?25hCollecting querystring-parser
+  Downloading querystring_parser-1.2.4-py2.py3-none-any.whl (7.9 kB)
+Requirement already satisfied: click&gt;=7.0 in /usr/local/lib/python3.7/dist-packages (from mlflow-&gt;pycaret) (7.1.2)
+Requirement already satisfied: packaging in /usr/local/lib/python3.7/dist-packages (from mlflow-&gt;pycaret) (21.3)
+Requirement already satisfied: Flask in /usr/local/lib/python3.7/dist-packages (from mlflow-&gt;pycaret) (1.1.4)
+Requirement already satisfied: sqlparse&gt;=0.3.1 in /usr/local/lib/python3.7/dist-packages (from mlflow-&gt;pycaret) (0.4.2)
+Requirement already satisfied: sqlalchemy&gt;=1.4.0 in /usr/local/lib/python3.7/dist-packages (from mlflow-&gt;pycaret) (1.4.37)
+Collecting prometheus-flask-exporter
+  Downloading prometheus_flask_exporter-0.20.2-py3-none-any.whl (18 kB)
+Collecting pyjwt&gt;=1.7.0
+  Downloading PyJWT-2.4.0-py3-none-any.whl (18 kB)
+Requirement already satisfied: oauthlib&gt;=3.1.0 in /usr/local/lib/python3.7/dist-packages (from databricks-cli&gt;=0.8.7-&gt;mlflow-&gt;pycaret) (3.2.0)
+Requirement already satisfied: tabulate&gt;=0.7.7 in /usr/local/lib/python3.7/dist-packages (from databricks-cli&gt;=0.8.7-&gt;mlflow-&gt;pycaret) (0.8.9)
+Collecting websocket-client&gt;=0.32.0
+  Downloading websocket_client-1.3.3-py3-none-any.whl (54 kB)
+[K     |████████████████████████████████| 54 kB 2.5 MB/s 
+[?25hCollecting gitdb&lt;5,&gt;=4.0.1
+  Downloading gitdb-4.0.9-py3-none-any.whl (63 kB)
+[K     |████████████████████████████████| 63 kB 1.8 MB/s 
+[?25hCollecting smmap&lt;6,&gt;=3.0.1
+  Downloading smmap-5.0.0-py3-none-any.whl (24 kB)
+Requirement already satisfied: greenlet!=0.4.17 in /usr/local/lib/python3.7/dist-packages (from sqlalchemy&gt;=1.4.0-&gt;mlflow-&gt;pycaret) (1.1.2)
+Collecting Mako
+  Downloading Mako-1.2.1-py3-none-any.whl (78 kB)
+[K     |████████████████████████████████| 78 kB 7.7 MB/s 
+[?25hRequirement already satisfied: itsdangerous&lt;2.0,&gt;=0.24 in /usr/local/lib/python3.7/dist-packages (from Flask-&gt;mlflow-&gt;pycaret) (1.1.0)
+Requirement already satisfied: Werkzeug&lt;2.0,&gt;=0.15 in /usr/local/lib/python3.7/dist-packages (from Flask-&gt;mlflow-&gt;pycaret) (1.0.1)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in /usr/local/lib/python3.7/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets-&gt;pycaret) (1.5.0)
+Requirement already satisfied: bleach in /usr/local/lib/python3.7/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets-&gt;pycaret) (5.0.0)
+Requirement already satisfied: testpath in /usr/local/lib/python3.7/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets-&gt;pycaret) (0.6.0)
+Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in /usr/local/lib/python3.7/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets-&gt;pycaret) (0.8.4)
+Requirement already satisfied: defusedxml in /usr/local/lib/python3.7/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets-&gt;pycaret) (0.7.1)
+Requirement already satisfied: webencodings in /usr/local/lib/python3.7/dist-packages (from bleach-&gt;nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets-&gt;pycaret) (0.5.1)
+Requirement already satisfied: regex&gt;=2021.8.3 in /usr/local/lib/python3.7/dist-packages (from nltk-&gt;pycaret) (2022.6.2)
+Requirement already satisfied: prometheus-client in /usr/local/lib/python3.7/dist-packages (from prometheus-flask-exporter-&gt;mlflow-&gt;pycaret) (0.14.1)
+Collecting funcy
+  Downloading funcy-1.17-py2.py3-none-any.whl (33 kB)
+Requirement already satisfied: sklearn in /usr/local/lib/python3.7/dist-packages (from pyLDAvis-&gt;pycaret) (0.0)
+Collecting pyLDAvis
+  Downloading pyLDAvis-3.3.0.tar.gz (1.7 MB)
+[K     |████████████████████████████████| 1.7 MB 64.1 MB/s 
+[?25h  Installing build dependencies ... [?25l[?25hdone
+  Getting requirements to build wheel ... [?25l[?25hdone
+  Installing backend dependencies ... [?25l[?25hdone
+    Preparing wheel metadata ... [?25l[?25hdone
+  Downloading pyLDAvis-3.2.2.tar.gz (1.7 MB)
+[K     |████████████████████████████████| 1.7 MB 62.5 MB/s 
+[?25hRequirement already satisfied: numexpr in /usr/local/lib/python3.7/dist-packages (from pyLDAvis-&gt;pycaret) (2.8.1)
+Requirement already satisfied: future in /usr/local/lib/python3.7/dist-packages (from pyLDAvis-&gt;pycaret) (0.16.0)
+Requirement already satisfied: statsmodels in /usr/local/lib/python3.7/dist-packages (from pyod-&gt;pycaret) (0.10.2)
+Requirement already satisfied: patsy&gt;=0.4.0 in /usr/local/lib/python3.7/dist-packages (from statsmodels-&gt;pyod-&gt;pycaret) (0.5.2)
+Collecting pynndescent&gt;=0.5
+  Downloading pynndescent-0.5.7.tar.gz (1.1 MB)
+[K     |████████████████████████████████| 1.1 MB 35.1 MB/s 
+[?25hBuilding wheels for collected packages: htmlmin, imagehash, databricks-cli, pyLDAvis, pyod, umap-learn, pynndescent
+  Building wheel for htmlmin (setup.py) ... [?25l[?25hdone
+  Created wheel for htmlmin: filename=htmlmin-0.1.12-py3-none-any.whl size=27098 sha256=09365b10976c7aed84ee6af9963060227fd78c4ae08a9f708f8eea72deab4a01
+  Stored in directory: /root/.cache/pip/wheels/70/e1/52/5b14d250ba868768823940c3229e9950d201a26d0bd3ee8655
+  Building wheel for imagehash (setup.py) ... [?25l[?25hdone
+  Created wheel for imagehash: filename=ImageHash-4.2.1-py2.py3-none-any.whl size=295206 sha256=503ea7f1d24e0c01d1b5c76e92d12d2e0430c28ca8be66599a39ea5b7f032cf2
+  Stored in directory: /root/.cache/pip/wheels/4c/d5/59/5e3e297533ddb09407769762985d134135064c6831e29a914e
+  Building wheel for databricks-cli (setup.py) ... [?25l[?25hdone
+  Created wheel for databricks-cli: filename=databricks_cli-0.17.0-py3-none-any.whl size=141960 sha256=3a4bb5b21e53e86592f100845750a1b48291ed9e6462988ca07485291daced64
+  Stored in directory: /root/.cache/pip/wheels/55/c3/db/33705569425fd2bdc9ea73051a8053fa26965c2bce8a146747
+  Building wheel for pyLDAvis (setup.py) ... [?25l[?25hdone
+  Created wheel for pyLDAvis: filename=pyLDAvis-3.2.2-py2.py3-none-any.whl size=135617 sha256=29f3dd61970427a6fa61c6c19032aa434ac62e2870ee3392f1eb4e596c681a14
+  Stored in directory: /root/.cache/pip/wheels/f8/b1/9b/560ac1931796b7303f7b517b949d2d31a4fbc512aad3b9f284
+  Building wheel for pyod (setup.py) ... [?25l[?25hdone
+  Created wheel for pyod: filename=pyod-1.0.2-py3-none-any.whl size=150272 sha256=9f4bd958fd45d14d4b55b6eec4dba2e6ac6d24a93d6742b7afc2521875af3d64
+  Stored in directory: /root/.cache/pip/wheels/e6/8f/06/5512935ed3c79659f612e8bb8f43cb51dd47c21973e0230997
+  Building wheel for umap-learn (setup.py) ... [?25l[?25hdone
+  Created wheel for umap-learn: filename=umap_learn-0.5.3-py3-none-any.whl size=82829 sha256=c748681d1971a7e27dcd6783b549d700f395aac60b502413f7fad6d331e9951f
+  Stored in directory: /root/.cache/pip/wheels/b3/52/a5/1fd9e3e76a7ab34f134c07469cd6f16e27ef3a37aeff1fe821
+  Building wheel for pynndescent (setup.py) ... [?25l[?25hdone
+  Created wheel for pynndescent: filename=pynndescent-0.5.7-py3-none-any.whl size=54286 sha256=d26ca62dd082d211384ce887c57f091d37740b9cdd75202cd25277119d17e5d1
+  Stored in directory: /root/.cache/pip/wheels/7f/2a/f8/7bd5dcec71bd5c669f6f574db3113513696b98f3f9b51f496c
+Successfully built htmlmin imagehash databricks-cli pyLDAvis pyod umap-learn pynndescent
+Installing collected packages: markupsafe, numpy, tangled-up-in-unicode, smmap, scipy, multimethod, websocket-client, visions, srsly, requests, pyjwt, plac, Mako, imagehash, gitdb, catalogue, thinc, querystring-parser, pyyaml, pynndescent, prometheus-flask-exporter, phik, htmlmin, gunicorn, gitpython, funcy, docker, databricks-cli, alembic, yellowbrick, umap-learn, spacy, scikit-plot, pyod, pyLDAvis, pandas-profiling, mlxtend, mlflow, lightgbm, kmodes, imbalanced-learn, Boruta, pycaret
+  Attempting uninstall: markupsafe
+    Found existing installation: MarkupSafe 2.0.1
+    Uninstalling MarkupSafe-2.0.1:
+      Successfully uninstalled MarkupSafe-2.0.1
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.21.6
+    Uninstalling numpy-1.21.6:
+      Successfully uninstalled numpy-1.21.6
+  Attempting uninstall: scipy
+    Found existing installation: scipy 1.4.1
+    Uninstalling scipy-1.4.1:
+      Successfully uninstalled scipy-1.4.1
+  Attempting uninstall: srsly
+    Found existing installation: srsly 2.4.3
+    Uninstalling srsly-2.4.3:
+      Successfully uninstalled srsly-2.4.3
+  Attempting uninstall: requests
+    Found existing installation: requests 2.23.0
+    Uninstalling requests-2.23.0:
+      Successfully uninstalled requests-2.23.0
+  Attempting uninstall: catalogue
+    Found existing installation: catalogue 2.0.7
+    Uninstalling catalogue-2.0.7:
+      Successfully uninstalled catalogue-2.0.7
+  Attempting uninstall: thinc
+    Found existing installation: thinc 8.0.17
+    Uninstalling thinc-8.0.17:
+      Successfully uninstalled thinc-8.0.17
+  Attempting uninstall: pyyaml
+    Found existing installation: PyYAML 3.13
+    Uninstalling PyYAML-3.13:
+      Successfully uninstalled PyYAML-3.13
+  Attempting uninstall: yellowbrick
+    Found existing installation: yellowbrick 1.4
+    Uninstalling yellowbrick-1.4:
+      Successfully uninstalled yellowbrick-1.4
+  Attempting uninstall: spacy
+    Found existing installation: spacy 3.3.1
+    Uninstalling spacy-3.3.1:
+      Successfully uninstalled spacy-3.3.1
+  Attempting uninstall: pandas-profiling
+    Found existing installation: pandas-profiling 1.4.1
+    Uninstalling pandas-profiling-1.4.1:
+      Successfully uninstalled pandas-profiling-1.4.1
+  Attempting uninstall: mlxtend
+    Found existing installation: mlxtend 0.14.0
+    Uninstalling mlxtend-0.14.0:
+      Successfully uninstalled mlxtend-0.14.0
+  Attempting uninstall: lightgbm
+    Found existing installation: lightgbm 2.2.3
+    Uninstalling lightgbm-2.2.3:
+      Successfully uninstalled lightgbm-2.2.3
+  Attempting uninstall: imbalanced-learn
+    Found existing installation: imbalanced-learn 0.8.1
+    Uninstalling imbalanced-learn-0.8.1:
+      Successfully uninstalled imbalanced-learn-0.8.1
+[31mERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+xarray-einstats 0.2.2 requires numpy&gt;=1.21, but you have numpy 1.19.5 which is incompatible.
+tensorflow 2.8.2+zzzcolab20220527125636 requires numpy&gt;=1.20, but you have numpy 1.19.5 which is incompatible.
+google-colab 1.0.0 requires requests~=2.23.0, but you have requests 2.28.1 which is incompatible.
+en-core-web-sm 3.3.0 requires spacy&lt;3.4.0,&gt;=3.3.0.dev0, but you have spacy 2.3.7 which is incompatible.
+datascience 0.10.6 requires folium==0.2.1, but you have folium 0.8.3 which is incompatible.
+albumentations 0.1.12 requires imgaug&lt;0.2.7,&gt;=0.2.5, but you have imgaug 0.2.9 which is incompatible.[0m
+Successfully installed Boruta-0.3 Mako-1.2.1 alembic-1.8.0 catalogue-1.0.0 databricks-cli-0.17.0 docker-5.0.3 funcy-1.17 gitdb-4.0.9 gitpython-3.1.27 gunicorn-20.1.0 htmlmin-0.1.12 imagehash-4.2.1 imbalanced-learn-0.7.0 kmodes-0.12.1 lightgbm-3.3.2 markupsafe-2.1.1 mlflow-1.27.0 mlxtend-0.19.0 multimethod-1.8 numpy-1.19.5 pandas-profiling-3.2.0 phik-0.12.2 plac-1.1.3 prometheus-flask-exporter-0.20.2 pyLDAvis-3.2.2 pycaret-2.3.10 pyjwt-2.4.0 pynndescent-0.5.7 pyod-1.0.2 pyyaml-5.4.1 querystring-parser-1.2.4 requests-2.28.1 scikit-plot-0.3.7 scipy-1.5.4 smmap-5.0.0 spacy-2.3.7 srsly-1.0.5 tangled-up-in-unicode-0.2.0 thinc-7.4.5 umap-learn-0.5.3 visions-0.7.4 websocket-client-1.3.3 yellowbrick-1.3.post1
+
+
+
+
+Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Collecting markupsafe==2.0.1
+  Downloading MarkupSafe-2.0.1-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (31 kB)
+Installing collected packages: markupsafe
+  Attempting uninstall: markupsafe
+    Found existing installation: MarkupSafe 2.1.1
+    Uninstalling MarkupSafe-2.1.1:
+      Successfully uninstalled MarkupSafe-2.1.1
+[31mERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+pandas-profiling 3.2.0 requires markupsafe~=2.1.1, but you have markupsafe 2.0.1 which is incompatible.
+datascience 0.10.6 requires folium==0.2.1, but you have folium 0.8.3 which is incompatible.[0m
+Successfully installed markupsafe-2.0.1
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pycaret.utils <span class="keyword">import</span> enable_colab</span><br><span class="line">enable_colab()</span><br></pre></td></tr></table></figure>
+
+<pre><code>Colab mode enabled.
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pycaret.datasets <span class="keyword">import</span> get_data</span><br><span class="line">dataset = get_data(<span class="string">&#x27;credit&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
+
+
+
+  <div id="df-003d30fc-6b2a-4861-920f-6f43428d0b62">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -133,52 +785,155 @@ memory usage: 7.6+ KB
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>alcohol</th>
-      <th>sugar</th>
-      <th>pH</th>
-      <th>class</th>
+      <th>LIMIT_BAL</th>
+      <th>SEX</th>
+      <th>EDUCATION</th>
+      <th>MARRIAGE</th>
+      <th>AGE</th>
+      <th>PAY_1</th>
+      <th>PAY_2</th>
+      <th>PAY_3</th>
+      <th>PAY_4</th>
+      <th>PAY_5</th>
+      <th>...</th>
+      <th>BILL_AMT4</th>
+      <th>BILL_AMT5</th>
+      <th>BILL_AMT6</th>
+      <th>PAY_AMT1</th>
+      <th>PAY_AMT2</th>
+      <th>PAY_AMT3</th>
+      <th>PAY_AMT4</th>
+      <th>PAY_AMT5</th>
+      <th>PAY_AMT6</th>
+      <th>default</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>9.4</td>
-      <td>1.9</td>
-      <td>3.51</td>
+      <td>20000</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>24</td>
+      <td>2</td>
+      <td>2</td>
+      <td>-1</td>
+      <td>-1</td>
+      <td>-2</td>
+      <td>...</td>
       <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>689.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>9.8</td>
-      <td>2.6</td>
-      <td>3.20</td>
-      <td>0.0</td>
+      <td>90000</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>34</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>14331.0</td>
+      <td>14948.0</td>
+      <td>15549.0</td>
+      <td>1518.0</td>
+      <td>1500.0</td>
+      <td>1000.0</td>
+      <td>1000.0</td>
+      <td>1000.0</td>
+      <td>5000.0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>9.8</td>
-      <td>2.3</td>
-      <td>3.26</td>
-      <td>0.0</td>
+      <td>50000</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>37</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>28314.0</td>
+      <td>28959.0</td>
+      <td>29547.0</td>
+      <td>2000.0</td>
+      <td>2019.0</td>
+      <td>1200.0</td>
+      <td>1100.0</td>
+      <td>1069.0</td>
+      <td>1000.0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>9.8</td>
-      <td>1.9</td>
-      <td>3.16</td>
-      <td>0.0</td>
+      <td>50000</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>57</td>
+      <td>-1</td>
+      <td>0</td>
+      <td>-1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>20940.0</td>
+      <td>19146.0</td>
+      <td>19131.0</td>
+      <td>2000.0</td>
+      <td>36681.0</td>
+      <td>10000.0</td>
+      <td>9000.0</td>
+      <td>689.0</td>
+      <td>679.0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>9.4</td>
-      <td>1.9</td>
-      <td>3.51</td>
-      <td>0.0</td>
+      <td>50000</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>37</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>19394.0</td>
+      <td>19619.0</td>
+      <td>20024.0</td>
+      <td>2500.0</td>
+      <td>1815.0</td>
+      <td>657.0</td>
+      <td>1000.0</td>
+      <td>1000.0</td>
+      <td>800.0</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
+<p>5 rows × 24 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-3bf02ac1-ddc8-4efa-a92e-c38f41acaaf5')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-003d30fc-6b2a-4861-920f-6f43428d0b62')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -223,12 +978,12 @@ memory usage: 7.6+ KB
 
 <pre><code>  &lt;script&gt;
     const buttonEl =
-      document.querySelector(&#39;#df-3bf02ac1-ddc8-4efa-a92e-c38f41acaaf5 button.colab-df-convert&#39;);
+      document.querySelector(&#39;#df-003d30fc-6b2a-4861-920f-6f43428d0b62 button.colab-df-convert&#39;);
     buttonEl.style.display =
       google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
 
     async function convertToInteractive(key) &#123;
-      const element = document.querySelector(&#39;#df-3bf02ac1-ddc8-4efa-a92e-c38f41acaaf5&#39;);
+      const element = document.querySelector(&#39;#df-003d30fc-6b2a-4861-920f-6f43428d0b62&#39;);
       const dataTable =
         await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
                                                  [key], &#123;&#125;);
@@ -252,28 +1007,81 @@ memory usage: 7.6+ KB
 
 
 
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dataset.info() <span class="comment">#credit에 대한 information을 가져오는 것</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wine.info()</span><br></pre></td></tr></table></figure>
+
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
 
 <pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 6497 entries, 0 to 6496
-Data columns (total 4 columns):
- #   Column   Non-Null Count  Dtype  
----  ------   --------------  -----  
- 0   alcohol  6497 non-null   float64
- 1   sugar    6497 non-null   float64
- 2   pH       6497 non-null   float64
- 3   class    6497 non-null   float64
-dtypes: float64(4)
-memory usage: 203.2 KB
+RangeIndex: 24000 entries, 0 to 23999
+Data columns (total 24 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   LIMIT_BAL  24000 non-null  int64  
+ 1   SEX        24000 non-null  int64  
+ 2   EDUCATION  24000 non-null  int64  
+ 3   MARRIAGE   24000 non-null  int64  
+ 4   AGE        24000 non-null  int64  
+ 5   PAY_1      24000 non-null  int64  
+ 6   PAY_2      24000 non-null  int64  
+ 7   PAY_3      24000 non-null  int64  
+ 8   PAY_4      24000 non-null  int64  
+ 9   PAY_5      24000 non-null  int64  
+ 10  PAY_6      24000 non-null  int64  
+ 11  BILL_AMT1  24000 non-null  float64
+ 12  BILL_AMT2  24000 non-null  float64
+ 13  BILL_AMT3  24000 non-null  float64
+ 14  BILL_AMT4  24000 non-null  float64
+ 15  BILL_AMT5  24000 non-null  float64
+ 16  BILL_AMT6  24000 non-null  float64
+ 17  PAY_AMT1   24000 non-null  float64
+ 18  PAY_AMT2   24000 non-null  float64
+ 19  PAY_AMT3   24000 non-null  float64
+ 20  PAY_AMT4   24000 non-null  float64
+ 21  PAY_AMT5   24000 non-null  float64
+ 22  PAY_AMT6   24000 non-null  float64
+ 23  default    24000 non-null  int64  
+dtypes: float64(12), int64(12)
+memory usage: 4.4 MB
 </code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wine.describe()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#credit 에 대한 데이터를 가공하는 과정</span></span><br><span class="line">data = dataset.sample(frac=<span class="number">0.95</span>, random_state=<span class="number">786</span>)</span><br><span class="line">data_unseen = dataset.drop(data.index)</span><br><span class="line">data.reset_index(inplace=<span class="literal">True</span>, drop=<span class="literal">True</span>)</span><br><span class="line">data_unseen.reset_index(inplace=<span class="literal">True</span>, drop=<span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Data for Modeling: &#x27;</span> + <span class="built_in">str</span>(data.shape))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Unseen Data For Predictions: &#x27;</span> + <span class="built_in">str</span>(data_unseen.shape))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
 
 
-  <div id="df-bfadddc7-f809-497f-8df3-d3dd992f496e">
+
+<pre><code>Data for Modeling: (22800, 24)
+Unseen Data For Predictions: (1200, 24)
+</code></pre>
+<ul>
+<li>set up</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 설정을 해주는 단계</span></span><br><span class="line"><span class="keyword">import</span> jinja2</span><br><span class="line"><span class="keyword">from</span> pycaret.classification <span class="keyword">import</span> *</span><br><span class="line">exp_clf101 = setup(data = data, target = <span class="string">&#x27;default&#x27;</span>, session_id=<span class="number">123</span>) </span><br></pre></td></tr></table></figure>
+
+
+
+  <div id="df-af499831-4c50-410c-b849-a648fea8cc27">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -294,73 +1102,315 @@ memory usage: 203.2 KB
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>alcohol</th>
-      <th>sugar</th>
-      <th>pH</th>
-      <th>class</th>
+      <th>Description</th>
+      <th>Value</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>count</th>
-      <td>6497.000000</td>
-      <td>6497.000000</td>
-      <td>6497.000000</td>
-      <td>6497.000000</td>
+      <th>0</th>
+      <td>session_id</td>
+      <td>123</td>
     </tr>
     <tr>
-      <th>mean</th>
-      <td>10.491801</td>
-      <td>5.443235</td>
-      <td>3.218501</td>
-      <td>0.753886</td>
+      <th>1</th>
+      <td>Target</td>
+      <td>default</td>
     </tr>
     <tr>
-      <th>std</th>
-      <td>1.192712</td>
-      <td>4.757804</td>
-      <td>0.160787</td>
-      <td>0.430779</td>
+      <th>2</th>
+      <td>Target Type</td>
+      <td>Binary</td>
     </tr>
     <tr>
-      <th>min</th>
-      <td>8.000000</td>
-      <td>0.600000</td>
-      <td>2.720000</td>
-      <td>0.000000</td>
+      <th>3</th>
+      <td>Label Encoded</td>
+      <td>None</td>
     </tr>
     <tr>
-      <th>25%</th>
-      <td>9.500000</td>
-      <td>1.800000</td>
-      <td>3.110000</td>
-      <td>1.000000</td>
+      <th>4</th>
+      <td>Original Data</td>
+      <td>(22800, 24)</td>
     </tr>
     <tr>
-      <th>50%</th>
-      <td>10.300000</td>
-      <td>3.000000</td>
-      <td>3.210000</td>
-      <td>1.000000</td>
+      <th>5</th>
+      <td>Missing Values</td>
+      <td>False</td>
     </tr>
     <tr>
-      <th>75%</th>
-      <td>11.300000</td>
-      <td>8.100000</td>
-      <td>3.320000</td>
-      <td>1.000000</td>
+      <th>6</th>
+      <td>Numeric Features</td>
+      <td>14</td>
     </tr>
     <tr>
-      <th>max</th>
-      <td>14.900000</td>
-      <td>65.800000</td>
-      <td>4.010000</td>
-      <td>1.000000</td>
+      <th>7</th>
+      <td>Categorical Features</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Ordinal Features</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>High Cardinality Features</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>High Cardinality Method</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Transformed Train Set</td>
+      <td>(15959, 88)</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Transformed Test Set</td>
+      <td>(6841, 88)</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Shuffle Train-Test</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Stratify Train-Test</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Fold Generator</td>
+      <td>StratifiedKFold</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Fold Number</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>CPU Jobs</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Use GPU</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Log Experiment</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Experiment Name</td>
+      <td>clf-default-name</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USI</td>
+      <td>dac2</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Imputation Type</td>
+      <td>simple</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Iterative Imputation Iteration</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Numeric Imputer</td>
+      <td>mean</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Iterative Imputation Numeric Model</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Categorical Imputer</td>
+      <td>constant</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Iterative Imputation Categorical Model</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Unknown Categoricals Handling</td>
+      <td>least_frequent</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Normalize</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Normalize Method</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Transformation</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Transformation Method</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>PCA</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>PCA Method</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>PCA Components</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Ignore Low Variance</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Combine Rare Levels</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Rare Level Threshold</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Numeric Binning</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Remove Outliers</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Outliers Threshold</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Remove Multicollinearity</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Multicollinearity Threshold</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>Remove Perfect Collinearity</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Clustering</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Clustering Iteration</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Polynomial Features</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>Polynomial Degree</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>Trignometry Features</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>Polynomial Threshold</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Group Features</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>Feature Selection</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>Feature Selection Method</td>
+      <td>classic</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>Features Selection Threshold</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>Feature Interaction</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>Feature Ratio</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>Interaction Threshold</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>Fix Imbalance</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Fix Imbalance Method</td>
+      <td>SMOTE</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-bfadddc7-f809-497f-8df3-d3dd992f496e')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-af499831-4c50-410c-b849-a648fea8cc27')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -405,12 +1455,560 @@ memory usage: 203.2 KB
 
 <pre><code>  &lt;script&gt;
     const buttonEl =
-      document.querySelector(&#39;#df-bfadddc7-f809-497f-8df3-d3dd992f496e button.colab-df-convert&#39;);
+      document.querySelector(&#39;#df-af499831-4c50-410c-b849-a648fea8cc27 button.colab-df-convert&#39;);
     buttonEl.style.display =
       google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
 
     async function convertToInteractive(key) &#123;
-      const element = document.querySelector(&#39;#df-bfadddc7-f809-497f-8df3-d3dd992f496e&#39;);
+      const element = document.querySelector(&#39;#df-af499831-4c50-410c-b849-a648fea8cc27&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+<h2 id="모델링"><a href="#모델링" class="headerlink" title="모델링"></a>모델링</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">best_model = compare_models()</span><br></pre></td></tr></table></figure>
+
+
+
+  <div id="df-7619a723-c12b-4142-920c-02f2ec654efd">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Model</th>
+      <th>Accuracy</th>
+      <th>AUC</th>
+      <th>Recall</th>
+      <th>Prec.</th>
+      <th>F1</th>
+      <th>Kappa</th>
+      <th>MCC</th>
+      <th>TT (Sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ridge</th>
+      <td>Ridge Classifier</td>
+      <td>0.8254</td>
+      <td>0.0000</td>
+      <td>0.3637</td>
+      <td>0.6913</td>
+      <td>0.4764</td>
+      <td>0.3836</td>
+      <td>0.4122</td>
+      <td>0.050</td>
+    </tr>
+    <tr>
+      <th>lda</th>
+      <td>Linear Discriminant Analysis</td>
+      <td>0.8247</td>
+      <td>0.7634</td>
+      <td>0.3755</td>
+      <td>0.6794</td>
+      <td>0.4835</td>
+      <td>0.3884</td>
+      <td>0.4132</td>
+      <td>0.300</td>
+    </tr>
+    <tr>
+      <th>gbc</th>
+      <td>Gradient Boosting Classifier</td>
+      <td>0.8226</td>
+      <td>0.7789</td>
+      <td>0.3551</td>
+      <td>0.6806</td>
+      <td>0.4664</td>
+      <td>0.3725</td>
+      <td>0.4010</td>
+      <td>5.809</td>
+    </tr>
+    <tr>
+      <th>ada</th>
+      <td>Ada Boost Classifier</td>
+      <td>0.8221</td>
+      <td>0.7697</td>
+      <td>0.3505</td>
+      <td>0.6811</td>
+      <td>0.4626</td>
+      <td>0.3690</td>
+      <td>0.3983</td>
+      <td>1.306</td>
+    </tr>
+    <tr>
+      <th>lightgbm</th>
+      <td>Light Gradient Boosting Machine</td>
+      <td>0.8210</td>
+      <td>0.7750</td>
+      <td>0.3609</td>
+      <td>0.6679</td>
+      <td>0.4683</td>
+      <td>0.3721</td>
+      <td>0.3977</td>
+      <td>0.408</td>
+    </tr>
+    <tr>
+      <th>rf</th>
+      <td>Random Forest Classifier</td>
+      <td>0.8199</td>
+      <td>0.7598</td>
+      <td>0.3663</td>
+      <td>0.6601</td>
+      <td>0.4707</td>
+      <td>0.3727</td>
+      <td>0.3965</td>
+      <td>3.321</td>
+    </tr>
+    <tr>
+      <th>et</th>
+      <td>Extra Trees Classifier</td>
+      <td>0.8092</td>
+      <td>0.7377</td>
+      <td>0.3677</td>
+      <td>0.6047</td>
+      <td>0.4571</td>
+      <td>0.3497</td>
+      <td>0.3657</td>
+      <td>2.400</td>
+    </tr>
+    <tr>
+      <th>lr</th>
+      <td>Logistic Regression</td>
+      <td>0.7814</td>
+      <td>0.6410</td>
+      <td>0.0003</td>
+      <td>0.1000</td>
+      <td>0.0006</td>
+      <td>0.0003</td>
+      <td>0.0034</td>
+      <td>0.985</td>
+    </tr>
+    <tr>
+      <th>dummy</th>
+      <td>Dummy Classifier</td>
+      <td>0.7814</td>
+      <td>0.5000</td>
+      <td>0.0000</td>
+      <td>0.0000</td>
+      <td>0.0000</td>
+      <td>0.0000</td>
+      <td>0.0000</td>
+      <td>0.031</td>
+    </tr>
+    <tr>
+      <th>knn</th>
+      <td>K Neighbors Classifier</td>
+      <td>0.7547</td>
+      <td>0.5939</td>
+      <td>0.1763</td>
+      <td>0.3719</td>
+      <td>0.2388</td>
+      <td>0.1145</td>
+      <td>0.1259</td>
+      <td>0.986</td>
+    </tr>
+    <tr>
+      <th>dt</th>
+      <td>Decision Tree Classifier</td>
+      <td>0.7293</td>
+      <td>0.6147</td>
+      <td>0.4104</td>
+      <td>0.3878</td>
+      <td>0.3986</td>
+      <td>0.2242</td>
+      <td>0.2245</td>
+      <td>0.376</td>
+    </tr>
+    <tr>
+      <th>svm</th>
+      <td>SVM - Linear Kernel</td>
+      <td>0.7277</td>
+      <td>0.0000</td>
+      <td>0.1017</td>
+      <td>0.1671</td>
+      <td>0.0984</td>
+      <td>0.0067</td>
+      <td>0.0075</td>
+      <td>0.585</td>
+    </tr>
+    <tr>
+      <th>qda</th>
+      <td>Quadratic Discriminant Analysis</td>
+      <td>0.5098</td>
+      <td>0.5473</td>
+      <td>0.6141</td>
+      <td>0.2472</td>
+      <td>0.3488</td>
+      <td>0.0600</td>
+      <td>0.0805</td>
+      <td>0.155</td>
+    </tr>
+    <tr>
+      <th>nb</th>
+      <td>Naive Bayes</td>
+      <td>0.3760</td>
+      <td>0.6442</td>
+      <td>0.8845</td>
+      <td>0.2441</td>
+      <td>0.3826</td>
+      <td>0.0608</td>
+      <td>0.1207</td>
+      <td>0.048</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-7619a723-c12b-4142-920c-02f2ec654efd')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-7619a723-c12b-4142-920c-02f2ec654efd button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-7619a723-c12b-4142-920c-02f2ec654efd&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+<ul>
+<li>가장 좋은 모델을 뽑아주세요</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(best_model)</span><br></pre></td></tr></table></figure>
+
+
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
+
+<pre><code>RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=None, normalize=False, random_state=123, solver=&#39;auto&#39;,
+                tol=0.001)
+</code></pre>
+<ul>
+<li>모델 생성</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># knn 모델에 대해서</span></span><br><span class="line">knn_model = create_model(<span class="string">&#x27;knn&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+  <div id="df-10ece260-6a01-4354-a08f-172662845ac6">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accuracy</th>
+      <th>AUC</th>
+      <th>Recall</th>
+      <th>Prec.</th>
+      <th>F1</th>
+      <th>Kappa</th>
+      <th>MCC</th>
+    </tr>
+    <tr>
+      <th>Fold</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.7469</td>
+      <td>0.6020</td>
+      <td>0.1920</td>
+      <td>0.3545</td>
+      <td>0.2491</td>
+      <td>0.1128</td>
+      <td>0.1204</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.7550</td>
+      <td>0.5894</td>
+      <td>0.2092</td>
+      <td>0.3883</td>
+      <td>0.2719</td>
+      <td>0.1402</td>
+      <td>0.1500</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.7506</td>
+      <td>0.5883</td>
+      <td>0.1576</td>
+      <td>0.3459</td>
+      <td>0.2165</td>
+      <td>0.0923</td>
+      <td>0.1024</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.7419</td>
+      <td>0.5818</td>
+      <td>0.1519</td>
+      <td>0.3136</td>
+      <td>0.2046</td>
+      <td>0.0723</td>
+      <td>0.0790</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.7563</td>
+      <td>0.5908</td>
+      <td>0.1490</td>
+      <td>0.3611</td>
+      <td>0.2110</td>
+      <td>0.0954</td>
+      <td>0.1085</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.7550</td>
+      <td>0.5997</td>
+      <td>0.1748</td>
+      <td>0.3720</td>
+      <td>0.2378</td>
+      <td>0.1139</td>
+      <td>0.1255</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.7638</td>
+      <td>0.5890</td>
+      <td>0.1891</td>
+      <td>0.4125</td>
+      <td>0.2593</td>
+      <td>0.1413</td>
+      <td>0.1565</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.7613</td>
+      <td>0.6240</td>
+      <td>0.1633</td>
+      <td>0.3904</td>
+      <td>0.2303</td>
+      <td>0.1163</td>
+      <td>0.1318</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.7619</td>
+      <td>0.5988</td>
+      <td>0.1862</td>
+      <td>0.4037</td>
+      <td>0.2549</td>
+      <td>0.1356</td>
+      <td>0.1500</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.7549</td>
+      <td>0.5756</td>
+      <td>0.1897</td>
+      <td>0.3771</td>
+      <td>0.2524</td>
+      <td>0.1246</td>
+      <td>0.1351</td>
+    </tr>
+    <tr>
+      <th>Mean</th>
+      <td>0.7547</td>
+      <td>0.5939</td>
+      <td>0.1763</td>
+      <td>0.3719</td>
+      <td>0.2388</td>
+      <td>0.1145</td>
+      <td>0.1259</td>
+    </tr>
+    <tr>
+      <th>Std</th>
+      <td>0.0065</td>
+      <td>0.0126</td>
+      <td>0.0191</td>
+      <td>0.0279</td>
+      <td>0.0214</td>
+      <td>0.0214</td>
+      <td>0.0230</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-10ece260-6a01-4354-a08f-172662845ac6')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-10ece260-6a01-4354-a08f-172662845ac6 button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-10ece260-6a01-4354-a08f-172662845ac6&#39;);
       const dataTable =
         await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
                                                  [key], &#123;&#125;);
@@ -434,278 +2032,282 @@ memory usage: 203.2 KB
 
 
 
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data = wine[[<span class="string">&#x27;alcohol&#x27;</span>,<span class="string">&#x27;sugar&#x27;</span>,<span class="string">&#x27;pH&#x27;</span>]].to_numpy()</span><br><span class="line">target = wine[<span class="string">&#x27;class&#x27;</span>].to_numpy()</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">train_input, test_input, train_target, test_target = train_test_split(data,target,test_size=<span class="number">0.2</span>,random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">params =&#123;</span><br><span class="line">    <span class="string">&#x27;n_neighbors&#x27;</span>: np.arange(<span class="number">0</span>,<span class="number">50</span>,<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line">tunned_knn = tune_model(knn_model, custom_grid =params)</span><br><span class="line"><span class="built_in">print</span>(tunned_knn)</span><br></pre></td></tr></table></figure>
 
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(train_input.shape,test_input.shape)</span><br></pre></td></tr></table></figure>
 
-<pre><code>(5197, 3) (1300, 3)
+  <div id="df-1bde01f8-f982-4e15-b24d-24767759a45b">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Accuracy</th>
+      <th>AUC</th>
+      <th>Recall</th>
+      <th>Prec.</th>
+      <th>F1</th>
+      <th>Kappa</th>
+      <th>MCC</th>
+    </tr>
+    <tr>
+      <th>Fold</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.7813</td>
+      <td>0.6482</td>
+      <td>0.0372</td>
+      <td>0.5000</td>
+      <td>0.0693</td>
+      <td>0.0402</td>
+      <td>0.0876</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.7807</td>
+      <td>0.6436</td>
+      <td>0.0315</td>
+      <td>0.4783</td>
+      <td>0.0591</td>
+      <td>0.0330</td>
+      <td>0.0759</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.7744</td>
+      <td>0.6563</td>
+      <td>0.0315</td>
+      <td>0.3333</td>
+      <td>0.0576</td>
+      <td>0.0206</td>
+      <td>0.0403</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.7845</td>
+      <td>0.6589</td>
+      <td>0.0659</td>
+      <td>0.5610</td>
+      <td>0.1179</td>
+      <td>0.0754</td>
+      <td>0.1345</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.7826</td>
+      <td>0.6645</td>
+      <td>0.0315</td>
+      <td>0.5500</td>
+      <td>0.0596</td>
+      <td>0.0368</td>
+      <td>0.0903</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.7794</td>
+      <td>0.6477</td>
+      <td>0.0544</td>
+      <td>0.4634</td>
+      <td>0.0974</td>
+      <td>0.0539</td>
+      <td>0.0961</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.7826</td>
+      <td>0.6278</td>
+      <td>0.0630</td>
+      <td>0.5238</td>
+      <td>0.1125</td>
+      <td>0.0688</td>
+      <td>0.1214</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.7751</td>
+      <td>0.6702</td>
+      <td>0.0372</td>
+      <td>0.3611</td>
+      <td>0.0675</td>
+      <td>0.0278</td>
+      <td>0.0523</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.7813</td>
+      <td>0.6409</td>
+      <td>0.0630</td>
+      <td>0.5000</td>
+      <td>0.1120</td>
+      <td>0.0662</td>
+      <td>0.1146</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.7881</td>
+      <td>0.6426</td>
+      <td>0.0661</td>
+      <td>0.6389</td>
+      <td>0.1198</td>
+      <td>0.0822</td>
+      <td>0.1548</td>
+    </tr>
+    <tr>
+      <th>Mean</th>
+      <td>0.7810</td>
+      <td>0.6501</td>
+      <td>0.0482</td>
+      <td>0.4910</td>
+      <td>0.0873</td>
+      <td>0.0505</td>
+      <td>0.0968</td>
+    </tr>
+    <tr>
+      <th>Std</th>
+      <td>0.0039</td>
+      <td>0.0119</td>
+      <td>0.0148</td>
+      <td>0.0861</td>
+      <td>0.0255</td>
+      <td>0.0206</td>
+      <td>0.0338</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-1bde01f8-f982-4e15-b24d-24767759a45b')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-1bde01f8-f982-4e15-b24d-24767759a45b button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-1bde01f8-f982-4e15-b24d-24767759a45b&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+<pre><code>KNeighborsClassifier(algorithm=&#39;auto&#39;, leaf_size=30, metric=&#39;minkowski&#39;,
+                     metric_params=None, n_jobs=-1, n_neighbors=42, p=2,
+                     weights=&#39;uniform&#39;)
 </code></pre>
 <ul>
-<li>StandardScalar 클래스를 사용해 훈련 세트 전처</li>
+<li>auc</li>
+<li>최소 0.5</li>
+<li>좋은 모델 0.8</li>
+<li>최고 1</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line">ss = StandardScaler()</span><br><span class="line">ss.fit(train_input)</span><br><span class="line">train_scaled = ss.transform(train_input)</span><br><span class="line">test_scaled = ss.transform(test_input)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot_model(tunned_knn,plot=<span class="string">&#x27;auc&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line">lr = LogisticRegression()</span><br><span class="line">lr.fit(train_scaled, train_target)</span><br><span class="line"><span class="built_in">print</span>(lr.score(train_scaled,train_target))</span><br><span class="line"><span class="built_in">print</span>(lr.score(test_scaled, test_target))</span><br></pre></td></tr></table></figure>
+<p><img src="/images/day0705/output_40_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 의사결정틜</span></span><br><span class="line">evaluate_model(tunned_knn)</span><br></pre></td></tr></table></figure>
 
-<pre><code>0.7808350971714451
-0.7776923076923077
+
+
+<script src="/static/components/requirejs/require.js"></script>
+<script>
+  requirejs.config({
+    paths: {
+      base: '/static/base',
+      plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+    },
+  });
+</script>
+
+
+
+
+<pre><code>interactive(children=(ToggleButtons(description=&#39;Plot Type:&#39;, icons=(&#39;&#39;,), options=((&#39;Hyperparameters&#39;, &#39;param…
 </code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(lr.coef_,lr.intercept_)</span><br></pre></td></tr></table></figure>
-
-<pre><code>[[ 0.51270274  1.6733911  -0.68767781]] [1.81777902]
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> plot_tree</span><br><span class="line">dt = DecisionTreeClassifier(max_depth=<span class="number">7</span>,random_state =<span class="number">42</span>)</span><br><span class="line">dt.fit(train_scaled,train_target)</span><br><span class="line"><span class="built_in">print</span>(dt.score(train_scaled, train_target))</span><br><span class="line"><span class="built_in">print</span>(dt.score(test_scaled,test_target))</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">7</span>))</span><br><span class="line">plot_tree(dt,max_depth=<span class="number">10</span>,filled=<span class="literal">True</span>, feature_names=[<span class="string">&#x27;alcohol&#x27;</span>,<span class="string">&#x27;sugar&#x27;</span>,<span class="string">&#x27;pH&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.8895516644217818
-0.8630769230769231
-</code></pre>
-<p><img src="/images/day0704/output_34_1.png" alt="png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">7</span>))</span><br><span class="line">plot_tree(dt, max_depth =<span class="number">1</span>, filled=<span class="literal">True</span>, feature_names=[<span class="string">&#x27;alcohol&#x27;</span>,<span class="string">&#x27;sugar&#x27;</span>,<span class="string">&#x27;pH&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="/images/day0704/output_35_0.png" alt="png"></p>
-<ul>
-<li>불순도<ul>
-<li>비율</li>
-<li>레드와인 5:5 화이트와인</li>
-<li>한 범주 안에서 서로 다른 데이터가 얼마나 섞여 있는지 나타냄<ul>
-<li>흰새과 검은색이 각각 4-개씩 있다.</li>
-<li>불순도 최대 0.5</li>
-<li>흰색과 검은색이 완전 100% 분리가 됨</li>
-<li>흰색 노드 불순도 최소 0</li>
-<li>검은색 노드 불순도 최소0</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>엔드로피<ul>
-<li>불확실한 정도를 의미함, 0~1 사이</li>
-<li>흰색과 검은색이 각각 50개씩 섞여 있다.<ul>
-<li>엔트로피 최대 1</li>
-</ul>
-</li>
-<li>흰색과 검은색이 완전 100% 분리됨</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(dt.feature_importances_)</span><br></pre></td></tr></table></figure>
-
-<pre><code>[0.16949576 0.67274329 0.15776095]
-</code></pre>
-<ul>
-<li>현업에서 DEcisionTreeClassifier</li>
-<li>랜덤 포레스트, XGBoost 하이퍼파라미터 매우 많음</li>
-</ul>
-<h2 id="검증-세트"><a href="#검증-세트" class="headerlink" title="검증 세트"></a>검증 세트</h2><ul>
-<li>훈련세트와 테스트세트</li>
-<li>훈련: 교과서 공부하는 것 훈련세트, 모의평가</li>
-<li>검증: 강남대성 모의고사 문제지</li>
-<li>테스트: 6월 9월</li>
-<li>실전: 수능</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">wine=pd.read_csv(<span class="string">&#x27;https://bit.ly/wine_csv_data&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data = wine[[<span class="string">&#x27;alcohol&#x27;</span>,<span class="string">&#x27;sugar&#x27;</span>,<span class="string">&#x27;pH&#x27;</span>]].to_numpy()</span><br><span class="line">target = wine[<span class="string">&#x27;class&#x27;</span>].to_numpy()</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">train_input, test_input, train_target, test_target = train_test_split(data,target,test_size=<span class="number">0.2</span>,random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sub_input, val_input, sub_target, val_target = train_test_split(train_input, train_target, test_size=<span class="number">0.2</span>,random_state=<span class="number">42</span>) </span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(sub_input.shape, val_input.shape)</span><br></pre></td></tr></table></figure>
-
-<pre><code>(4157, 3) (1040, 3)
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</span><br><span class="line">dt = DecisionTreeClassifier(random_state =<span class="number">42</span>)</span><br><span class="line">dt.fit(sub_input, sub_target)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;훈련성과:&quot;</span>,dt.score(sub_input, sub_target))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;검증성과:&quot;</span>,dt.score(val_input, val_target))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;마지막 최종:&quot;</span>,dt.score(test_input, test_target))</span><br></pre></td></tr></table></figure>
-
-<pre><code>훈련성과: 0.9971133028626413
-검증성과: 0.864423076923077
-마지막 최종: 0.8569230769230769
-</code></pre>
-<h2 id="교차-검증"><a href="#교차-검증" class="headerlink" title="교차 검증"></a>교차 검증</h2><ul>
-<li>데이터 셋을 반복 분할</li>
-<li>For loop</li>
-<li>샘플링 편향적일 수 있음</li>
-<li>교차검증을 한다고 해서, 정확도가 무조건 올라가는 것은 아니다.</li>
-<li>모형을 안정적으로 만들어준다.<ul>
-<li>과대적합 방지</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> KFold</span><br><span class="line"></span><br><span class="line">df = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#데이터를 K폴드로 나눈다.</span></span><br><span class="line">folds = KFold(n_splits = <span class="number">5</span>,shuffle =<span class="literal">True</span>)</span><br><span class="line"><span class="keyword">for</span> train_idx, valid_idx <span class="keyword">in</span> folds.split(df):</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">f&#x27;훈련 데이터: <span class="subst">&#123;df[train_idx]&#125;</span>,검증데이터 : <span class="subst">&#123;df[valid_idx]&#125;</span>&#x27;</span>)</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
-
-<pre><code>훈련 데이터: [ 1  2  3  4  5  6  8 10],검증데이터 : [7 9]
-훈련 데이터: [ 1  2  3  4  6  7  9 10],검증데이터 : [5 8]
-훈련 데이터: [ 3  4  5  6  7  8  9 10],검증데이터 : [1 2]
-훈련 데이터: [1 2 3 5 6 7 8 9],검증데이터 : [ 4 10]
-훈련 데이터: [ 1  2  4  5  7  8  9 10],검증데이터 : [3 6]
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_validate</span><br><span class="line">scores = cross_validate(dt, train_input, train_target)</span><br><span class="line"><span class="built_in">print</span>(scores)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;평균: &quot;</span>, np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>]))</span><br></pre></td></tr></table></figure>
-
-<pre><code>&#123;&#39;fit_time&#39;: array([0.01039791, 0.01018906, 0.01092386, 0.01160955, 0.01004958]), &#39;score_time&#39;: array([0.0053134 , 0.00104594, 0.00103641, 0.00105906, 0.00095129]), &#39;test_score&#39;: array([0.86923077, 0.84615385, 0.87680462, 0.84889317, 0.83541867])&#125;
-평균:  0.855300214703487
-</code></pre>
-<ul>
-<li>StratifiedKFold 사용</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> StratifiedKFold</span><br><span class="line">scores = cross_validate(dt, train_input, train_target,cv=StratifiedKFold())</span><br><span class="line"><span class="built_in">print</span>(scores)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;평균 : &quot;</span>,np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>]))</span><br></pre></td></tr></table></figure>
-
-<pre><code>&#123;&#39;fit_time&#39;: array([0.00961757, 0.0068903 , 0.00719047, 0.00706291, 0.00724101]), &#39;score_time&#39;: array([0.00066686, 0.00058341, 0.0006268 , 0.00061035, 0.00061965]), &#39;test_score&#39;: array([0.86923077, 0.84615385, 0.87680462, 0.84889317, 0.83541867])&#125;
-평균 :  0.855300214703487
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">splitter = StratifiedKFold(n_splits = <span class="number">10</span>, shuffle = <span class="literal">True</span>, random_state =<span class="number">42</span>)</span><br><span class="line">scores = cross_validate(dt, train_input, train_target, cv= splitter)</span><br><span class="line"><span class="built_in">print</span>(np.mean(scores[<span class="string">&#x27;test_score&#x27;</span>]))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.8574181117533719
-</code></pre>
-<h2 id="하이퍼파라미터-튜닝-모델이-학습할-수-없어서-사용자가-지정해야만-하는-파라미터"><a href="#하이퍼파라미터-튜닝-모델이-학습할-수-없어서-사용자가-지정해야만-하는-파라미터" class="headerlink" title="하이퍼파라미터 튜닝(모델이 학습할 수 없어서 사용자가 지정해야만 하는 파라미터)"></a>하이퍼파라미터 튜닝(모델이 학습할 수 없어서 사용자가 지정해야만 하는 파라미터)</h2><ul>
-<li><p>그리드 서치</p>
-<ul>
-<li>사람이 수동적으로 입력</li>
-<li>max_depth:[1,3,5]</li>
-</ul>
-</li>
-<li><p>랜덤 서치</p>
-<ul>
-<li>사람이 범위만 지정</li>
-<li>max_depth: 1부터 10 사이 아무거나</li>
-</ul>
-</li>
-<li><p>베이지안 옵티마이제이션</p>
-</li>
-<li><p>사람의 개입 없이 하이퍼파라미터 튜닝을 자동으로 수행하는 기술을 AutoML이라고 함</p>
-<ul>
-<li>예: PyCaret</li>
-</ul>
-</li>
-<li><p>각 모델마다 적게는 1<del>2개에서, 많게는 5</del>6개의 매개변수를 제공한다.</p>
-<ul>
-<li>XGBoost 100개</li>
-</ul>
-</li>
-<li><p>하이퍼파라미터와 동시에 교차검증을 수행</p>
-</li>
-<li><p>교차검증 5번</p>
-</li>
-<li><p>교차검증 1번 동 때, Max Depth 3번 적용</p>
-</li>
-<li><p>총 결과값 3 X 5 X 2 나옴</p>
-</li>
-<li><p>Max Depth &#x3D; 1,3,7</p>
-</li>
-<li><p>Criterion &#x3D; gini,entropy</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line">params=&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="string">&#x27;min_impurity_decrease&#x27;</span>: [<span class="number">0.0001</span>, <span class="number">0.0002</span>,<span class="number">0.0003</span>,<span class="number">0.0004</span>,<span class="number">0.0005</span>]&#125;</span><br><span class="line">gs = GridSearchCV(DecisionTreeClassifier(random_state =<span class="number">42</span>), params, n_jobs=-<span class="number">1</span>)</span><br><span class="line">gs.fit(train_input, train_target)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>GridSearchCV(estimator=DecisionTreeClassifier(random_state=42), n_jobs=-1,
-             param_grid=&#123;&#39;min_impurity_decrease&#39;: [0.0001, 0.0002, 0.0003,
-                                                   0.0004, 0.0005]&#125;)
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;best : &quot;</span>, gs.best_estimator_)</span><br><span class="line">dt = gs.best_estimator_</span><br><span class="line"><span class="built_in">print</span>(dt.score(train_input, train_target))</span><br></pre></td></tr></table></figure>
-
-<pre><code>best :  DecisionTreeClassifier(min_impurity_decrease=0.0001, random_state=42)
-0.9615162593804117
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(gs.best_params_)</span><br></pre></td></tr></table></figure>
-
-<pre><code>&#123;&#39;min_impurity_decrease&#39;: 0.0001&#125;
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(gs.cv_results_[<span class="string">&#x27;mean_test_score&#x27;</span>])</span><br></pre></td></tr></table></figure>
-
-<pre><code>[0.86819297 0.86453617 0.86492226 0.86780891 0.86761605]
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">best_index = np.argmax(gs.cv_results_[<span class="string">&#x27;mean_test_score&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(gs.cv_results_[<span class="string">&#x27;params&#x27;</span>][best_index])</span><br></pre></td></tr></table></figure>
-
-<pre><code>&#123;&#39;min_impurity_decrease&#39;: 0.0001&#125;
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">params = &#123;<span class="string">&#x27;min_impurity_decrease&#x27;</span>: np.arange(<span class="number">0.0001</span>,<span class="number">0.001</span>,<span class="number">0.0001</span>),</span><br><span class="line">          <span class="string">&#x27;max_depth&#x27;</span>: <span class="built_in">range</span>(<span class="number">5</span>,<span class="number">20</span>,<span class="number">1</span>),</span><br><span class="line">          <span class="string">&#x27;min_samples_split&#x27;</span>:<span class="built_in">range</span>(<span class="number">2</span>,<span class="number">100</span>,<span class="number">10</span>)</span><br><span class="line">          &#125;</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gs = GridSearchCV(DecisionTreeClassifier(random_state = <span class="number">42</span>), params, n_jobs = -<span class="number">1</span>)</span><br><span class="line">gs.fit(train_input, train_target)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>GridSearchCV(estimator=DecisionTreeClassifier(random_state=42), n_jobs=-1,
-             param_grid=&#123;&#39;max_depth&#39;: range(5, 20),
-                         &#39;min_impurity_decrease&#39;: array([0.0001, 0.0002, 0.0003, 0.0004, 0.0005, 0.0006, 0.0007, 0.0008,
-       0.0009]),
-                         &#39;min_samples_split&#39;: range(2, 100, 10)&#125;)
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(gs.best_params_)</span><br></pre></td></tr></table></figure>
-
-<pre><code>&#123;&#39;max_depth&#39;: 14, &#39;min_impurity_decrease&#39;: 0.0004, &#39;min_samples_split&#39;: 12&#125;
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.<span class="built_in">max</span>(gs.cv_results_[<span class="string">&#x27;mean_test_score&#x27;</span>]))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.8683865773302731
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> uniform, randint</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rgen = randint(<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line">rgen.rvs(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>array([1, 6, 4, 3, 9, 6, 2, 8, 3, 0])
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.unique(rgen.rvs(<span class="number">1000</span>), return_counts = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>(array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]),
- array([ 92, 107,  99,  95, 103, 120, 104,  86,  85, 109]))
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ugen = uniform(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">ugen.rvs(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>array([0.74572568, 0.67723448, 0.2947353 , 0.65314677, 0.71850518,
-       0.45742993, 0.13068961, 0.15581053, 0.29705039, 0.32323251])
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">params = &#123;<span class="string">&#x27;min_impurity_decrease&#x27;</span>: uniform(<span class="number">0.0001</span>,<span class="number">0.001</span>),</span><br><span class="line">          <span class="string">&#x27;max_depth&#x27;</span>: randint(<span class="number">20</span>,<span class="number">50</span>),</span><br><span class="line">          <span class="string">&#x27;min_samples_split&#x27;</span>: randint(<span class="number">2</span>,<span class="number">25</span>),</span><br><span class="line">          <span class="string">&#x27;min_samples_leaf&#x27;</span>: randint(<span class="number">1</span>,<span class="number">25</span>),&#125;</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> RandomizedSearchCV</span><br><span class="line">gs = RandomizedSearchCV(DecisionTreeClassifier(random_state =<span class="number">42</span>), params,</span><br><span class="line">                        n_iter=<span class="number">100</span>, n_jobs =-<span class="number">1</span>, random_state=<span class="number">42</span>)</span><br><span class="line">gs.fit(train_input, train_target)</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>RandomizedSearchCV(estimator=DecisionTreeClassifier(random_state=42),
-                   n_iter=100, n_jobs=-1,
-                   param_distributions=&#123;&#39;max_depth&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x7fe6693b8250&gt;,
-                                        &#39;min_impurity_decrease&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x7fe66a065110&gt;,
-                                        &#39;min_samples_leaf&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x7fe6693b8bd0&gt;,
-                                        &#39;min_samples_split&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x7fe6693b83d0&gt;&#125;,
-                   random_state=42)
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(gs.best_params_)</span><br></pre></td></tr></table></figure>
-
-<pre><code>&#123;&#39;max_depth&#39;: 39, &#39;min_impurity_decrease&#39;: 0.00034102546602601173, &#39;min_samples_leaf&#39;: 7, &#39;min_samples_split&#39;: 13&#125;
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.<span class="built_in">max</span>(gs.cv_results_[<span class="string">&#x27;mean_test_score&#x27;</span>]))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.8695428296438884
-</code></pre>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dt = gs.best_estimator_</span><br><span class="line"><span class="built_in">print</span>(dt.score(test_input, test_target))</span><br></pre></td></tr></table></figure>
-
-<pre><code>0.86
-</code></pre>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/">Previous</a></div><div class="pagination-next"><a href="/page/3/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><a class="pagination-link is-current" href="/page/2/">2</a></li><li><a class="pagination-link" href="/page/3/">3</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/17/">17</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Kim Seung Uk"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Kim Seung Uk</p><p class="is-size-6 is-block">사람답게</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>한국</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">17</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/seungukkim"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-05T08:33:00.000Z">2022-07-05</time></p><p class="title"><a href="/2022/07/05/day0705/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-05T08:32:50.000Z">2022-07-05</time></p><p class="title"><a href="/2022/07/05/day0704/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-01T08:27:17.660Z">2022-07-01</time></p><p class="title"><a href="/2022/07/01/day0701/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-06-30T08:36:40.000Z">2022-06-30</time></p><p class="title"><a href="/2022/06/30/day30_mi/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-06-29T08:38:14.371Z">2022-06-29</time></p><p class="title"><a href="/2022/06/29/day0629/"> </a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/07/"><span class="level-start"><span class="level-item">July 2022</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/06/"><span class="level-start"><span class="level-item">June 2022</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Change Plz" height="28"></a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/">Previous</a></div><div class="pagination-next"><a href="/page/3/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><a class="pagination-link is-current" href="/page/2/">2</a></li><li><a class="pagination-link" href="/page/3/">3</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/18/">18</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Kim Seung Uk"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Kim Seung Uk</p><p class="is-size-6 is-block">사람답게</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>한국</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">18</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/seungukkim"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-06T08:34:18.000Z">2022-07-06</time></p><p class="title"><a href="/2022/07/06/day0706/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-05T08:33:00.000Z">2022-07-05</time></p><p class="title"><a href="/2022/07/05/day0705/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-05T08:32:50.000Z">2022-07-05</time></p><p class="title"><a href="/2022/07/05/day0704/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-01T08:27:17.660Z">2022-07-01</time></p><p class="title"><a href="/2022/07/01/day0701/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-06-30T08:36:40.000Z">2022-06-30</time></p><p class="title"><a href="/2022/06/30/day30_mi/"> </a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/07/"><span class="level-start"><span class="level-item">July 2022</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/06/"><span class="level-start"><span class="level-item">June 2022</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Change Plz" height="28"></a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
